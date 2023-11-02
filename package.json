@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack serve --config=./webpack.dev.js",
-    "build": "webpack --config=./webpack.prod.js"
+    "build": "webpack --config=./webpack.prod.js",
+    "lint": "eslint src/**/*",
+    "lint:fix": "eslint src/**/* --fix"
   },
   "keywords": [],
   "author": "",
@@ -13,7 +15,20 @@
   "devDependencies": {
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "autoprefixer": "^10.4.16",
+    "css-loader": "^6.8.1",
+    "eslint": "^8.52.0",
+    "eslint-config-standard-with-typescript": "^39.1.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.33.2",
     "html-webpack-plugin": "^5.5.3",
+    "postcss": "^8.4.31",
+    "postcss-loader": "^7.3.3",
+    "style-loader": "^3.3.3",
+    "tailwindcss": "^3.3.5",
     "terser": "^5.24.0",
     "terser-webpack-plugin": "^5.3.9",
     "ts-loader": "^9.5.0",
