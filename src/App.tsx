@@ -1,5 +1,8 @@
 import React from "react";
+import HeroTopBar from "./components/HeroTopBar";
 const App: React.FC = () => (
-  <div className="text-3xl font-bold underline">Hello world</div>
+  <div>
+    <HeroTopBar />
+  </div>
 );
 export default App;
