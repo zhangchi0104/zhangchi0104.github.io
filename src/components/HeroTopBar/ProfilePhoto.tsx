@@ -1,7 +1,7 @@
 import React from "react";
 
 const ProfilePhoto: React.FC = () => (
-  <div className="p-2">
+  <div>
     <img className="w-80 h-80 bg-gray-300" />
   </div>
 );

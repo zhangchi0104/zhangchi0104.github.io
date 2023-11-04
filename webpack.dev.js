@@ -1,5 +1,5 @@
 const { merge } = require("webpack-merge");
-const common = require('./webpack.common.js');
+const common = require("./webpack.common.js");
 
 const opts = {
   mode: "development",
@@ -7,11 +7,11 @@ const opts = {
     minimize: false,
     splitChunks: {
       chunks: "all",
-    }
+    },
   },
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   devServer: {
-    static: './dist'
-  }
-}
+    static: "./dist",
+  },
+};
 module.exports = merge(common, opts);

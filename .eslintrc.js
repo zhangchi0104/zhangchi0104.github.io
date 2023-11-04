@@ -25,6 +25,20 @@ module.exports = {
   rules: {
     "@typescript-eslint/semi": ["error", "always"],
     "@typescript-eslint/quotes": ["error", "double"],
+    "@typescript-eslint/comma-dangle": ["error", "always-multiline"],
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        multiline: {
+          delimiter: "semi",
+          requireLast: true,
+        },
+        singleline: {
+          delimiter: "semi",
+          requireLast: true,
+        },
+      },
+    ],
   },
   settings: {
     react: {

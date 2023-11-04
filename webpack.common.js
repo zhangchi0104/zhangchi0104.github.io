@@ -15,12 +15,15 @@ module.exports = {
   ],
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
-    extensions: [".ts", ".tsx", ".js"],
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
     // Add support for TypeScripts fully qualified ESM imports.
     extensionAlias: {
       ".js": [".js", ".ts"],
       ".cjs": [".cjs", ".cts"],
       ".mjs": [".mjs", ".mts"],
+    },
+    alias: {
+      "@langs": path.resolve(__dirname, "langs"),
     },
   },
   module: {
