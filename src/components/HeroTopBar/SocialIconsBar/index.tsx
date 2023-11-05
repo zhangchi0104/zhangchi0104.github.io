@@ -1,16 +1,15 @@
 import React from "react";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import FaIcon from "./FaIcon";
-import Tooltip from "../../Tooltip";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 const SocialIconsBar: React.FC = () => {
   return (
     <div>
       <a href="https://github.com/zhangchi0104" className="mr-8">
         <FaIcon icon={faGithub} />
       </a>
-      <Tooltip tooltip="Aloha" className="inline">
-        <FaIcon icon={faGithub} />
-      </Tooltip>
+
+      <FaIcon icon={faEnvelope} />
       <a href="https://github.com/zhangchi0104" className="ml-8">
         <FaIcon icon={faGithub} />
       </a>
