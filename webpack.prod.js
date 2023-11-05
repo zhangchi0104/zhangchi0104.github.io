@@ -16,6 +16,8 @@ const opts = {
     ],
     splitChunks: {
       chunks: "all",
+      minSize: 10000,
+      maxSize: 250000,
     },
   },
 };
