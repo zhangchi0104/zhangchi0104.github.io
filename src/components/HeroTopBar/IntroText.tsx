@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import SocialIconsBar from "./SocialIconsBar";
 
 const IntroText: React.FC = () => {
   const { t } = useTranslation();
@@ -12,9 +11,6 @@ const IntroText: React.FC = () => {
         </h2>
         <p className="text-xl text-gray-500 mt-1">{t("topbar.subheading1")}</p>
         <p className="text-xl text-gray-500">{t("topbar.subheading2")}</p>
-      </div>
-      <div className="mt-12">
-        <SocialIconsBar />
       </div>
     </>
   );

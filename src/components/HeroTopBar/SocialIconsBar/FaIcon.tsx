@@ -12,7 +12,7 @@ const useFaIcon = () => {
   const fancyModeEnabled = useSelector(selectFancyModeEnabled);
   const basicStyle = "text-neutral-500 hover:text-neutral-700";
   const transitionCss =
-    "transition ease-in-out hover:scale-125 hover:-translate-y-1 duration-200";
+    "md:transition md:ease-in-out md:hover:scale-125 md:hover:-translate-y-1 md:duration-200";
   const finalStyle = fancyModeEnabled
     ? `${basicStyle} ${transitionCss}`
     : basicStyle;
