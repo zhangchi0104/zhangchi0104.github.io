@@ -1,17 +1,21 @@
 const path = require("path");
+const CopyFilePlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.tsx",
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    clean: true,
+    clean: true
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "src/index.html",
+      template: "src/index.html"
     }),
+    new CopyFilePlugin({
+      patterns: [{ from: "static", to: "static" }]
+    })
   ],
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
@@ -20,11 +24,11 @@ module.exports = {
     extensionAlias: {
       ".js": [".js", ".ts"],
       ".cjs": [".cjs", ".cts"],
-      ".mjs": [".mjs", ".mts"],
+      ".mjs": [".mjs", ".mts"]
     },
     alias: {
-      "@langs": path.resolve(__dirname, "langs"),
-    },
+      "@langs": path.resolve(__dirname, "langs")
+    }
   },
   module: {
     rules: [
@@ -34,19 +38,19 @@ module.exports = {
         exclude: /node_modules/,
         use: [
           {
-            loader: "style-loader",
+            loader: "style-loader"
           },
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1,
-            },
+              importLoaders: 1
+            }
           },
           {
-            loader: "postcss-loader",
-          },
-        ],
-      },
-    ],
-  },
+            loader: "postcss-loader"
+          }
+        ]
+      }
+    ]
+  }
 };

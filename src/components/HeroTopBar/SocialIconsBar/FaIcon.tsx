@@ -24,7 +24,14 @@ const useFaIcon = () => {
 
 const FaIcon: React.FC<FaIconProps> = ({ icon }) => {
   const { style } = useFaIcon();
-  return <FontAwesomeIcon icon={icon} size="2xl" className={style} />;
+  return (
+    <FontAwesomeIcon
+      icon={icon}
+      size="2xl"
+      className={style}
+      mask={["far", "circle"]}
+    />
+  );
 };
 
 export default FaIcon;
