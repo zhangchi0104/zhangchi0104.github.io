@@ -52,10 +52,7 @@ const AnimatedCavnas: React.FC = () => {
     animationRef.current?.draw(ctx, fps);
   });
   return (
-    <canvas
-      className="absolute -z-10 h-screen w-screen"
-      ref={canvasRef}
-    ></canvas>
+    <canvas className="-z-10 h-screen w-screen fixed" ref={canvasRef}></canvas>
   );
 };
 

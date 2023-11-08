@@ -51,16 +51,16 @@ abstract class Particle
     this.deg += this.ddeg;
   }
 
-  draw(ctx: CanvasRenderingContext2D, refreshRate: number) {
+  draw(ctx: CanvasRenderingContext2D) {
     // console.log("draw");
     const { deg } = this;
     const { x: centerX, y: centerY } = this.center;
     if (!this.visible(ctx)) {
       this.emit("leave");
     }
-    const expectedFrames = refreshRate >= 60 ? 60 : 30;
-    const progress = this.age / expectedFrames;
-    const scale = this.age < expectedFrames ? Particle.CURVE(progress) : 1;
+    const progress = this.age / Particle.BASE_LENGTH;
+    const scale =
+      this.age < Particle.BASE_LENGTH ? Particle.CURVE(progress) : 1;
 
     ctx.save();
     // ctx.scale(scale, scale);
@@ -73,7 +73,7 @@ abstract class Particle
 
     this.drawParticle(ctx, scale);
     ctx.restore();
-    this.age = Math.min(expectedFrames, this.age + 1);
+    this.age = Math.min(Particle.BASE_LENGTH, this.age + 1);
   }
 
   protected abstract drawParticle(

@@ -89,7 +89,7 @@ class ParticleAnimation {
     return particle;
   }
   draw(ctx: CanvasRenderingContext2D, refreshRate: number) {
-    this.particles.forEach((particle) => particle.draw(ctx, refreshRate));
+    this.particles.forEach((particle) => particle.draw(ctx));
   }
   step() {
     this.particles.forEach((particle) => particle.nextFrame());
