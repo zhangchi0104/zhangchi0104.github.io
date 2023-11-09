@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+type SectionName = "about-me" | "home" | "projects";
 interface AppState {
   fancyModeEnabled: boolean;
+  activeSection: SectionName;
 }
 
 const initialState: AppState = {
-  fancyModeEnabled: true
+  fancyModeEnabled: true,
+  activeSection: "home"
 };
 
 const rootSlice = createSlice({

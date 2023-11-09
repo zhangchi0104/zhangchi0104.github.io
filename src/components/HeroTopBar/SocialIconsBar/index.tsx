@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import React from "react";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import FaIcon from "./FaIcon";
 import MailIcon from "./MailIcon";
 const SocialIconsBar: React.FC = () => {
@@ -12,8 +12,8 @@ const SocialIconsBar: React.FC = () => {
         <div className="mr-16 inline">
           <MailIcon />
         </div>
-        <a href="https://github.com/zhangchi0104">
-          <FaIcon icon={faGithub} />
+        <a href="https://www.linkedin.com/in/chi-zhang-88606616a/">
+          <FaIcon icon={faLinkedin} />
         </a>
       </div>
     </>
