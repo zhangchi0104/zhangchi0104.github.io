@@ -11,12 +11,12 @@ const opts: InitOptions = {
   defaultNS: "translations",
   resources: {
     en: {
-      translations: translationsEn,
+      translations: translationsEn
     },
     zh: {
-      translations: translationsZh,
-    },
-  },
+      translations: translationsZh
+    }
+  }
 };
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises

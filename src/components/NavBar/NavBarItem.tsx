@@ -4,12 +4,19 @@ import { SectionName } from "@/store/slices/root";
 import React from "react";
 type NavBarItemProps = React.PropsWithChildren<{
   name: SectionName;
-  onClick: (name: SectionName) => void;
+  className?: string;
+  onClick?: (name: SectionName) => void;
 }>;
-const NavBarItem: React.FC<NavBarItemProps> = ({ name, children, onClick }) => {
-  const css = useExtendStyle("mr-20 text-xl relative cursor-default");
+const NavBarItem: React.FC<NavBarItemProps> = ({
+  name,
+  children,
+  onClick,
+  className
+}) => {
+  const css = useExtendStyle("text-xl relative cursor-default");
   const underlineCss =
-    "after:content-[''] after:absolute after:w-full after:h-[4px] after:bg-sky-900 after:bottom-0 after:left-0 after:-mb-[0.5rem]";
+    "after:content-[''] after:absolute after:w-full after:h-[4px] after:bg-sky-900 " +
+    "after:bottom-0 after:left-0 after:-mb-[0.5rem]";
   const inactiveStyle = "font-semi-bold text-gray-700 hover:cursor-pointer";
   const activeStyle =
     "font-bold text-sky-900 after:animate-bounce-emphasis " + underlineCss;
@@ -18,8 +25,8 @@ const NavBarItem: React.FC<NavBarItemProps> = ({ name, children, onClick }) => {
     activeSection === targetSection ? activeStyle : inactiveStyle;
   return (
     <p
-      onClick={() => onClick(name)}
-      className={css`${styleByActiveSection(name)}`}
+      onClick={() => onClick && onClick(name)}
+      className={css`${styleByActiveSection(name)} ${className || ""}`}
     >
       {children}
     </p>

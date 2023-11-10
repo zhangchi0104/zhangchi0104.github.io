@@ -4,7 +4,7 @@ export const selectFancyModeEnabled = (state: RootState) =>
   state.root.fancyModeEnabled;
 
 export const selectActiveSectionName = (state: RootState) =>
-  state.root.activeSection.name;
+  state.root.activeSection;
 
 export const selectActiveSection = (state: RootState) =>
   state.root.activeSection;
