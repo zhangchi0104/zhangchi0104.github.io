@@ -1,6 +1,6 @@
 import React from "react";
 import IntersectionDetector from "../IntersectionObserver";
-import { useAppDispatch } from "@/hooks";
+import { useAppDispatch, useMediaQuery } from "@/hooks";
 import { setActiveSectionName } from "@/store/actions";
 
 const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {

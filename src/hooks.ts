@@ -1,7 +1,7 @@
 import { TypedUseSelectorHook, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "./store";
 import { useSelector } from "react-redux";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
@@ -14,6 +14,24 @@ export const useExtendStyle =
       .join(" ")}`;
     return res.trim();
   };
+
+export const useMediaQuery = (query: string) => {
+  const [match, setMatch] = useState(window.matchMedia(query).matches);
+  const matchMedia = useRef(window.matchMedia(query));
+  const handleChange = () => {
+    console.log("mq on change", { matched: matchMedia.current.matches });
+    if (matchMedia.current.matches !== match) {
+      console.log("mq update state");
+      setMatch(matchMedia.current.matches);
+    }
+  };
+  useEffect(() => {
+    console.log("on change useEffect");
+    matchMedia.current.addEventListener("change", handleChange);
+    return () => matchMedia.current.removeEventListener("change", handleChange);
+  }, []);
+  return match;
+};
 
 export const useAnimationFrame = (callback: (time: number) => void) => {
   // stores the necessary values with useRef

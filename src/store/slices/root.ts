@@ -2,18 +2,15 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 export type SectionName = "about-me" | "home" | "projects";
 interface AppState {
   fancyModeEnabled: boolean;
-  activeSection: {
-    name: SectionName;
-    shouldScrollTo: boolean;
-  };
+
+  activeSection: SectionName;
+  locale: string;
 }
 
 const initialState: AppState = {
   fancyModeEnabled: true,
-  activeSection: {
-    name: "home",
-    shouldScrollTo: false
-  }
+  activeSection: "home",
+  locale: "en"
 };
 
 const rootSlice = createSlice({
@@ -30,12 +27,7 @@ const rootSlice = createSlice({
       state.fancyModeEnabled = !state.fancyModeEnabled;
     },
     setActiveSectionName: (state, action: PayloadAction<SectionName>) => {
-      state.activeSection.name = action.payload;
-      state.activeSection.shouldScrollTo = false;
-    },
-    scrollToSection: (state, action: PayloadAction<SectionName>) => {
-      state.activeSection.name = action.payload;
-      state.activeSection.shouldScrollTo = true;
+      state.activeSection = action.payload;
     }
   }
 });
@@ -44,8 +36,7 @@ export const {
   enableFancyMode,
   disableFancyMode,
   toggleFancyMode,
-  setActiveSectionName,
-  scrollToSection
+  setActiveSectionName
 } = rootSlice.actions;
 
 export default rootSlice.reducer;
