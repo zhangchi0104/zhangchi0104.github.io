@@ -33,9 +33,9 @@ const App: React.FC = () => {
   };
   return (
     <>
-      <NavBar onClick={onNavBarClick}></NavBar>
       <AnimatedCavnas />
       <div className="max-w-screen-lg mx-auto">
+        <NavBar onClick={onNavBarClick}></NavBar>
         <HeroTopBar ref={homeRef} />
         <AboutMe ref={aboutMeRef} />
         <div ref={projectsRef}></div>
