@@ -1,5 +1,6 @@
 export {
   enableFancyMode,
   disableFancyMode,
-  toggleFancyMode
+  toggleFancyMode,
+  setActiveSectionName
 } from "./slices/root";
