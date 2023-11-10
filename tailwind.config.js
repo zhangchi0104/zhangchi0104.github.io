@@ -4,7 +4,8 @@ module.exports = {
     extend: {
       animation: {
         "fade-in": "fade-in 0.3s cubic-bezier(0.4, 0, 1, 1)",
-        "fade-bounce-in": "fade-bounce-in 0.2s cubic-bezier(0.4, 0, 1, 1)"
+        "fade-bounce-in": "fade-bounce-in 0.3s cubic-bezier(0.4, 0, 1, 1)",
+        "bounce-emphasis": "bounce-emphasis 0.3s cubic-bezier(0.4, 0, 1, 1)"
       },
       keyframes: {
         "fade-in": {
@@ -37,6 +38,17 @@ module.exports = {
           "100%": {
             opacity: "1",
             transform: "scale(1)"
+          }
+        },
+        "bounce-emphasis": {
+          "0%": {
+            transform: "scaleX(1)"
+          },
+          "65%": {
+            transform: "scaleX(1.1)"
+          },
+          "100%": {
+            transform: "scaleX(1)"
           }
         }
       }
