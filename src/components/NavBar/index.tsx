@@ -18,29 +18,31 @@ const DesktopNavBar: React.FC<{ onClick: ItemSelectCallback }> = ({
   onClick
 }) => {
   return (
-    <nav className="fixed w-screen py-2 pl-4 pr-4 flex flex-row md:justify-end items-center bg-amber-50 justify-center md:pr-20">
-      <NavBarItem
-        className="mr-8 md:mr-12 lg:mr-20"
-        name="home"
-        onClick={onClick}
-      >
-        Home
-      </NavBarItem>
-      <NavBarItem
-        className="mr-8 md:mr-12 lg:mr-20"
-        name="about-me"
-        onClick={onClick}
-      >
-        About Me
-      </NavBarItem>
-      <NavBarItem
-        className="mr-8 md:mr-12 lg:mr-20"
-        name="projects"
-        onClick={onClick}
-      >
-        Projects
-      </NavBarItem>
-      <LanguageSelector />
+    <nav className="fixed w-full max-w-screen-lg py-2 pl-4 pr-4 bg-amber-50 justify-center">
+      <div className="flex flex-row md:justify-end items-center">
+        <NavBarItem
+          className="mr-8 md:mr-12 lg:mr-20"
+          name="home"
+          onClick={onClick}
+        >
+          Home
+        </NavBarItem>
+        <NavBarItem
+          className="mr-8 md:mr-12 lg:mr-20"
+          name="about-me"
+          onClick={onClick}
+        >
+          About Me
+        </NavBarItem>
+        <NavBarItem
+          className="mr-8 md:mr-12 lg:mr-20"
+          name="projects"
+          onClick={onClick}
+        >
+          Projects
+        </NavBarItem>
+        <LanguageSelector />
+      </div>
     </nav>
   );
 };

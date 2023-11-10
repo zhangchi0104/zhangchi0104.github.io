@@ -19,11 +19,7 @@ export const useMediaQuery = (query: string) => {
   const [match, setMatch] = useState(window.matchMedia(query).matches);
   const matchMedia = useRef(window.matchMedia(query));
   const handleChange = () => {
-    console.log("mq on change", { matched: matchMedia.current.matches });
-    if (matchMedia.current.matches !== match) {
-      console.log("mq update state");
-      setMatch(matchMedia.current.matches);
-    }
+    setMatch(matchMedia.current.matches);
   };
   useEffect(() => {
     console.log("on change useEffect");
