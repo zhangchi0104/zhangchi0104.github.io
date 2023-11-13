@@ -10,5 +10,19 @@
         "toast": "COPIED"
       }
     }
+  },
+  "aboutMe": {
+    "education": {
+      "master": {
+        "university": "University of Melbourne",
+        "degree": "Master of IT",
+        "duration": "Jul 2023 - Present"
+      },
+      "bCs": {
+        "university": "UNSW Sydney",
+        "degree": "B Sci. (Honours) / B Comm (Fintech)",
+        "duration": "Feb 2018 - Dec 2022"
+      }
+    }
   }
 }

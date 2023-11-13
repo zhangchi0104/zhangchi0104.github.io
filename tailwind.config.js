@@ -51,6 +51,9 @@ module.exports = {
             transform: "scaleX(1)"
           }
         }
+      },
+      backgroundImage: {
+        "unimelb-logo": "url(/img/unimelb.svg)"
       }
     }
   },
