@@ -10,5 +10,18 @@
         "toast": "COPIED"
       }
     }
+  },
+  "aboutMe": {
+    "education": {
+      "master": {
+        "university": "University of Melbourne",
+        "degree": "Master of IT",
+        "duration": "2023 - Present"
+      },
+      "bechalorcCs": {
+        "university": "UNSW Sydney",
+        "degree": "B Sci. (Honours)"
+      }
+    }
   }
 }

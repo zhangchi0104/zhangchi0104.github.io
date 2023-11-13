@@ -38,11 +38,11 @@ module.exports = [
           },
           singleline: {
             delimiter: "semi",
-            requireLast: true
+            requireLast: false
           }
         }
       ],
-      "multiline-ternary": ["error", "always"]
+      "multiline-ternary": ["off"]
     },
     settings: {
       react: {
