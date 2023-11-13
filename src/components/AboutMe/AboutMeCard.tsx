@@ -1,8 +1,8 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { Card } from "../Card";
-import { useExtendStyle } from "@/hooks";
+import Collapsable from "../Collapsable";
 
 interface AboutMeCardSelfProps {
   heading: string | JSX.Element;
@@ -14,8 +14,6 @@ type AboutMeCardProps = React.PropsWithChildren<AboutMeCardSelfProps>;
 type AboutMeCardHeaderProps = React.PropsWithChildren<
   AboutMeCardSelfProps & { expanded: boolean; onClick: () => void }
 >;
-
-type AboutMeCardBodyProps = React.PropsWithChildren;
 
 const AboutMeCardHeader: React.FC<AboutMeCardHeaderProps> = ({
   heading,
@@ -40,19 +38,6 @@ const AboutMeCardHeader: React.FC<AboutMeCardHeaderProps> = ({
   );
 };
 
-const AboutMeCardBody = React.forwardRef<HTMLDivElement, AboutMeCardBodyProps>(
-  ({ children }, ref) => {
-    const css = useExtendStyle(
-      "transition-[height] origin-top pt-1 ease-in-out overflow-hidden h-0"
-    );
-    return (
-      <div className={css``} ref={ref}>
-        {children}
-      </div>
-    );
-  }
-);
-
 const AboueMeCard: React.FC<AboutMeCardProps> = ({
   heading,
   subheading,
@@ -60,23 +45,15 @@ const AboueMeCard: React.FC<AboutMeCardProps> = ({
   className
 }) => {
   const [expanded, setExpanded] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-  useEffect(() => {
-    if (!ref.current) {
-      return;
-    }
-    const height = expanded ? ref.current.scrollHeight : 0;
-    ref.current.style.height = height + "px";
-  });
   return (
-    <Card className={className}>
+    <Card className={`px-8 py-2 ${className ?? ""}`}>
       <AboutMeCardHeader
         heading={heading}
         subheading={subheading}
         expanded={expanded}
         onClick={() => setExpanded(!expanded)}
       />
-      <AboutMeCardBody ref={ref}>{children}</AboutMeCardBody>
+      <Collapsable collapsed={!expanded}>{children}</Collapsable>
     </Card>
   );
 };

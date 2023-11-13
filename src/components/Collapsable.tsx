@@ -9,14 +9,19 @@ const Collapsable: React.FC<CollapableProps> = ({
   collapsed
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const height = collapsed
-    ? "0px"
-    : ref.current?.scrollHeight.toString() + "px" ?? "0px";
-  const css = `overflow-hidden ${collapsed ? "h-0" : ""} h-[${height}] ${
-    className ?? ""
-  }`;
+  const css = `overflow-hidden h-0 ${className ?? ""}`;
+  useEffect(() => {
+    if (!ref.current) {
+      return;
+    }
+
+    ref.current.style.height = collapsed
+      ? "0"
+      : ref.current.scrollHeight + "px";
+  });
+  const animation = "transition-[height] origin-top ease-in-out";
   return (
-    <div ref={ref} className={css}>
+    <div ref={ref} className={`${css} ${animation}`}>
       {children}
     </div>
   );
