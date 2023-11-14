@@ -3,6 +3,7 @@ import NavBarItem from "./NavBarItem";
 import { SectionName } from "@/store/slices/root";
 import LanguageSelector from "./LanguageSelector";
 import { useMediaQuery } from "@/hooks";
+import { useTranslation } from "react-i18next";
 type ItemSelectCallback = (name: SectionName) => void;
 const MobileNavBar = () => {
   return (
@@ -17,6 +18,7 @@ const MobileNavBar = () => {
 const DesktopNavBar: React.FC<{ onClick: ItemSelectCallback }> = ({
   onClick
 }) => {
+  const { t } = useTranslation();
   return (
     <nav className="fixed w-full max-w-screen-lg py-2 pl-4 pr-4 bg-amber-50 justify-center">
       <div className="flex flex-row md:justify-end items-center">
@@ -25,21 +27,21 @@ const DesktopNavBar: React.FC<{ onClick: ItemSelectCallback }> = ({
           name="home"
           onClick={onClick}
         >
-          Home
+          {t("navbar.home")}
         </NavBarItem>
         <NavBarItem
           className="mr-8 md:mr-12 lg:mr-20"
           name="about-me"
           onClick={onClick}
         >
-          About Me
+          {t("navbar.aboutMe")}
         </NavBarItem>
         <NavBarItem
           className="mr-8 md:mr-12 lg:mr-20"
           name="projects"
           onClick={onClick}
         >
-          Projects
+          {t("navbar.projects")}
         </NavBarItem>
         <LanguageSelector />
       </div>
