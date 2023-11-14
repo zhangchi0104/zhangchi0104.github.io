@@ -7,13 +7,15 @@
     "dev": "webpack serve --config=./webpack.dev.js",
     "build": "webpack --config=./webpack.prod.js",
     "lint": "eslint ./src/",
-    "lint:fix": "eslint ./src/z --fix"
+    "lint:fix": "eslint ./src/z --fix",
+    "toc": "i18next-resources-for-ts toc -i ./src/langs/en -o ./src/@types/resources.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/lodash": "^4.14.201",
+    "@types/node": "^20.9.0",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.14",
     "@types/react-redux": "^7.1.28",

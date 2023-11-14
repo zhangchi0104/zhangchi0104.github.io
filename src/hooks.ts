@@ -22,7 +22,6 @@ export const useMediaQuery = (query: string) => {
     setMatch(matchMedia.current.matches);
   };
   useEffect(() => {
-    console.log("on change useEffect");
     matchMedia.current.addEventListener("change", handleChange);
     return () => matchMedia.current.removeEventListener("change", handleChange);
   }, []);

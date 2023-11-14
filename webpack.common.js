@@ -27,7 +27,7 @@ module.exports = {
       ".mjs": [".mjs", ".mts"]
     },
     alias: {
-      "@langs": path.resolve(__dirname, "langs"),
+      "@langs": path.resolve(__dirname, "src", "langs"),
       "@": path.resolve(__dirname, "src")
     }
   },

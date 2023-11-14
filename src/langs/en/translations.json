@@ -1,0 +1,39 @@
+{
+  "home": {
+    "heading": "👋🏻G'Day! I'm Alex.",
+    "subheading1": "Master of IT (University of Melbourne)",
+    "subheading2": "Web Developer (React)",
+    "mail": {
+      "dialog": {
+        "title": "Mail",
+        "hint": "click to copy",
+        "toast": "COPIED"
+      }
+    }
+  },
+  "aboutMe": {
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "university": "University of Melbourne",
+          "degree": "Master of IT",
+          "duration": "Jul 2023 - Present",
+          "backgroundUrl": "/static/imgs/unimelb.svg"
+        },
+        {
+          "university": "UNSW Sydney",
+          "degree": "B Sci. (Honours) / B Comm (Fintech)",
+          "duration": "Feb 2018 - Dec 2022",
+          "backgroundUrl": "/static/imgs/unsw.svg"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills"
+    },
+    "workExperience": {
+      "title": "Work Experience"
+    }
+  }
+}

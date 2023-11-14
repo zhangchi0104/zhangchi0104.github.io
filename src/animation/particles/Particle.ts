@@ -1,6 +1,5 @@
 import { EventManager, cubicBezier } from "../../utils";
 import { ParticleEvent, Point, Transformable } from "../interfaces";
-import { round } from "lodash";
 export interface ParticleConstructorParam {
   // initial position
   x?: number;
@@ -24,11 +23,11 @@ abstract class Particle
   protected ddeg: number;
   protected y: number;
   protected dpi: number;
+  private static SPAWN_FRAMES_COUNT = 60;
   private static CURVE = cubicBezier(0, 0, 1.5, 1);
   private age = 0;
-  private static readonly EXPECTED_FRAMES = 60;
   public static readonly DPI = window.devicePixelRatio || 1;
-  public static readonly STROKE_WIDTH = 4;
+  public static readonly STROKE_WIDTH = window.devicePixelRatio || 1;
   public static readonly BASE_LENGTH = 30 * Particle.DPI;
   constructor(opts?: Partial<ParticleConstructorParam>) {
     super();
@@ -42,28 +41,30 @@ abstract class Particle
     this.dpi = window.devicePixelRatio || 1;
   }
 
-  move() {
-    this.x += this.dx;
-    this.y += this.dy;
+  move(refreshRate = 60) {
+    const speed = this.computeSpeedFactor(refreshRate);
+    this.x += this.dx * speed * Particle.DPI;
+    this.y += this.dy * speed * Particle.DPI;
   }
 
-  rotate() {
-    this.deg += this.ddeg;
+  rotate(refreshRate = 60) {
+    const speed = this.computeSpeedFactor(refreshRate);
+    this.deg += this.ddeg * speed;
   }
 
-  draw(ctx: CanvasRenderingContext2D) {
+  draw(ctx: CanvasRenderingContext2D, refreshRate = 60) {
     // console.log("draw");
     const { deg } = this;
     const { x: centerX, y: centerY } = this.center;
     if (!this.visible(ctx)) {
       this.emit("leave");
     }
-    const progress = this.age / Particle.BASE_LENGTH;
-    const scale =
-      this.age < Particle.BASE_LENGTH ? Particle.CURVE(progress) : 1;
+    let animationSpeedFactor = this.computeSpeedFactor(refreshRate);
+    const totalFramsCount = Particle.SPAWN_FRAMES_COUNT * animationSpeedFactor;
+    const progress = this.age / totalFramsCount;
+    const scale = this.age < totalFramsCount ? Particle.CURVE(progress) : 1;
 
     ctx.save();
-    // ctx.scale(scale, scale);
 
     ctx.strokeStyle = "#AAA";
     ctx.lineWidth = Particle.STROKE_WIDTH;
@@ -73,7 +74,17 @@ abstract class Particle
 
     this.drawParticle(ctx, scale);
     ctx.restore();
-    this.age = Math.min(Particle.BASE_LENGTH, this.age + 1);
+    this.age = Math.min(totalFramsCount, this.age + 1);
+  }
+
+  private computeSpeedFactor(refreshRate: number) {
+    let animationSpeedFactor = 1;
+    if (refreshRate >= 100) {
+      animationSpeedFactor = 0.5;
+    } else if (refreshRate <= 55) {
+      animationSpeedFactor = 2;
+    }
+    return animationSpeedFactor;
   }
 
   protected abstract drawParticle(
@@ -90,10 +101,10 @@ abstract class Particle
     }
     return true;
   }
-  public nextFrame() {
+  public nextFrame(refreshRate = 60) {
     // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.move();
-    this.rotate();
+    this.move(refreshRate);
+    this.rotate(refreshRate);
   }
 }
 

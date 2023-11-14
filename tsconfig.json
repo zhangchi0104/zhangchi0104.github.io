@@ -1,18 +1,37 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "ES2022",
-    "target": "es5",
-    "jsx": "react",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "strictNullChecks": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "@langs/*": ["./langs/*"],
-      "@/*": ["./src/*"]
-    }
-  }
+    "compilerOptions": {
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext"
+        ],
+        "esModuleInterop": true,
+        "outDir": "./dist/",
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "es5",
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
+        "strict": true,
+        "isolatedModules": true,
+        "resolveJsonModule": true,
+        "typeRoots": [
+            "./node_modules/@types",
+            "./src/@types"
+        ],
+        "paths": {
+            "@langs/*": [
+                "./src/langs/*"
+            ],
+            "@/*": [
+                "./src/*"
+            ]
+        },
+    },
+    "include": [
+        "src"
+    ]
 }

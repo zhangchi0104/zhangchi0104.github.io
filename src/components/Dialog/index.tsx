@@ -19,7 +19,7 @@ const Dialog: React.FC<DialogProps> = ({
   icon
 }) => {
   const modalStyle =
-    "absolute h-screen w-screen flex justify-center items-center z-100 top-0 left-0 bg-gray-700/80";
+    "fixed h-screen w-screen flex justify-center items-center z-100 top-0 left-0 bg-gray-700/80";
   const styleWithTransition = `${modalStyle} animate-fade-in`;
   return (
     <>
