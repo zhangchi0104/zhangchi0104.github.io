@@ -1,6 +1,11 @@
 {
+  "navbar": {
+    "home": "首页",
+    "aboutMe": "关于我",
+    "projects": "项目经历"
+  },
   "home": {
-    "heading": "嗨👋🏻, 我是Alex",
+    "heading": "嗨👋🏻! 我是 Alex",
     "subheading1": "IT硕士（墨尔本大学）",
     "subheading2": "前端开发者（React）",
     "mail": {
@@ -9,6 +14,31 @@
         "hint": "单击复制",
         "toast": "已复制"
       }
+    }
+  },
+  "aboutMe": {
+    "education": {
+      "title": "教育背景",
+      "items": [
+        {
+          "university": "墨尔本大学",
+          "degree": "IT硕士",
+          "duration": "2023 七月 - 至今",
+          "backgroundUrl": "/static/imgs/unimelb.svg"
+        },
+        {
+          "university": "新南威尔士大学",
+          "degree": "计算机科学学士(荣誉学位) / 商科学士 (金融科技)",
+          "duration": "2018 二月 - 2022 十二月",
+          "backgroundUrl": "/static/imgs/unsw.svg"
+        }
+      ]
+    },
+    "skills": {
+      "title": "技能特长"
+    },
+    "workExperience": {
+      "title": "工作经历"
     }
   }
 }

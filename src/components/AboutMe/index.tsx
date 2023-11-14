@@ -5,9 +5,11 @@ import { setActiveSectionName } from "@/store/actions";
 import Education from "./sections/Education";
 import Skills from "./sections/Skills";
 import Work from "./sections/Work";
+import { useTranslation } from "react-i18next";
 
 const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {
   const dispatch = useAppDispatch();
+  const { t } = useTranslation();
   return (
     <IntersectionDetector
       onEnter={() => dispatch(setActiveSectionName("about-me"))}
@@ -15,7 +17,7 @@ const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {
       ref={ref}
     >
       <h2 className="text-3xl text-gray-700 text-center font-semibold mb-4">
-        {"<About Me />"}
+        {`<${t("navbar.aboutMe")} />`}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg-grid-cols-3 items-start">
         <Work />
