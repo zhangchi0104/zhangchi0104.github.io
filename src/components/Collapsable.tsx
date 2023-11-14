@@ -19,7 +19,7 @@ const Collapsable: React.FC<CollapableProps> = ({
       ? "0"
       : ref.current.scrollHeight + "px";
   });
-  const animation = "transition-[height] origin-top ease-in-out";
+  const animation = `transition-[height] origin-top ease-in-out duration-500`;
   return (
     <div ref={ref} className={`${css} ${animation}`}>
       {children}

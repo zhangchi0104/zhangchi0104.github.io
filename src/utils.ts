@@ -1,4 +1,5 @@
 type EventHandlerCallback = () => void;
+
 export class EventManager<E extends string = string> {
   private handlersByEvent: { [key: string]: EventHandlerCallback[] } = {};
   on(event: E, handler: EventHandlerCallback) {

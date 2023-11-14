@@ -1,7 +1,6 @@
-export { ParticleConstructorParam } from "./particles/Particle";
 export interface Transformable {
-  move(): void;
-  rotate(): void;
+  move(refreshRate: number): void;
+  rotate(refreshRate: number): void;
 }
 
 export interface Point {
