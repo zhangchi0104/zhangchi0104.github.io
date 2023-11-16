@@ -1,5 +1,4 @@
 import { useTriggerUpdate } from "@/hooks";
-import { MutuallyExclude } from "@/utils";
 import React, {
   useEffect,
   useImperativeHandle,
@@ -50,7 +49,7 @@ const Collapsable = React.forwardRef<CollapsableHandle, CollapsablePropsCommon>(
     );
 
     useLayoutEffect(() => {}, [collapsed]);
-    const animation = `transition-[height] origin-top`;
+    const animation = `transition-[height] origin-top ease-in-out duration-500`;
     const css = `overflow-hidden ${className ?? ""}`;
     return (
       <div

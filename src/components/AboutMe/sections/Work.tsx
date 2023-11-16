@@ -19,10 +19,22 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
   descriptions
 }) => {
   return (
-    <AboutMeCard heading={company} subheading={title} className="mb-4">
-      {descriptions.map((item, i) => (
-        <p key={`${title}-${company}-${item}`}>{item}</p>
-      ))}
+    <AboutMeCard
+      className={`mb-4 ${className ?? ""}`}
+      heading={company}
+      subheading={title}
+    >
+      <div className="mt-2">
+        {descriptions.map((item, i) => (
+          <p
+            className="text-gray-700 text-sm mb-1 flex tracking-wide font-bold"
+            key={`${title}-${company}-${item}`}
+          >
+            <span className="mr-4 font-bold">-</span>
+            {item}
+          </p>
+        ))}
+      </div>
     </AboutMeCard>
   );
 };

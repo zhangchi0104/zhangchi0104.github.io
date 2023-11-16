@@ -53,7 +53,7 @@ const AboueMeCard: React.FC<AboutMeCardProps> = ({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <Card className={`px-8 py-2 ${className ?? ""}`}>
+    <Card className={`px-8 py-4 ${className ?? ""}`}>
       <AboutMeCardHeader
         heading={heading}
         subheading={subheading}

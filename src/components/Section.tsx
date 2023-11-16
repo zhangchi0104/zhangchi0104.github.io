@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Collapsable, { CollapsableHandle } from "./Collapsable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
@@ -30,7 +30,6 @@ const Section: React.FC<SectionProps> = ({ className, children, title }) => {
       </div>
       <UpdateContextProvider
         value={(deltaHeight) => {
-          console.log("wdnmd");
           ref.current?.resize(deltaHeight);
         }}
       >
