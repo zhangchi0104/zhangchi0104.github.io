@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import Collapsable from "./Collapsable";
+import React, { useRef, useState } from "react";
+import Collapsable, { CollapsableHandle } from "./Collapsable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { UpdateContextProvider } from "@/hooks";
 
 type SectionProps = React.PropsWithChildren<{
   className?: string;
@@ -10,9 +11,11 @@ type SectionProps = React.PropsWithChildren<{
 
 const Section: React.FC<SectionProps> = ({ className, children, title }) => {
   const [collapsed, setCollapsed] = useState(false);
+  const ref = useRef<CollapsableHandle>(null);
+
   return (
-    <div className={`mx-4 mb-4 ${className ?? ""}`}>
-      <div className="flex flex-row items-center justify-center mb-2">
+    <div className={`min-h-full mx-4 mb-4 ${className ?? ""}`}>
+      <div className="flex flex-row items-center justify-center mb-2 ">
         <span
           className={`transition ${
             collapsed ? "" : "rotate-90"
@@ -25,7 +28,15 @@ const Section: React.FC<SectionProps> = ({ className, children, title }) => {
           {title}
         </h3>
       </div>
-      <Collapsable collapsed={collapsed}>{children}</Collapsable>
+      <UpdateContextProvider
+        value={(deltaHeight) => {
+          ref.current?.resize(deltaHeight);
+        }}
+      >
+        <Collapsable ref={ref} collapsed={collapsed}>
+          {children}
+        </Collapsable>
+      </UpdateContextProvider>
     </div>
   );
 };

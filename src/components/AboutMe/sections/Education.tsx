@@ -5,11 +5,14 @@ import { useTranslation } from "react-i18next";
 
 import resources from "@/@types/resources";
 import Section from "@/components/Section";
+import { FieldType } from "@/utils";
 
-type UniversityCardProps =
-  (typeof resources)["translations"]["aboutMe"]["education"]["items"][number] & {
-    className?: string;
-  };
+type UniversityCardProps = FieldType<
+  typeof resources,
+  "translations.aboutMe.education.items"
+>[number] & {
+  className?: string;
+};
 
 const UniversityCard: React.FC<UniversityCardProps> = ({
   degree,
@@ -29,7 +32,7 @@ const UniversityCard: React.FC<UniversityCardProps> = ({
         />
       )}
       <CardBody className="text-center relative">
-        <p className={font`text-gray-800 mb-1 font-bold text-sm`}>
+        <p className={font`text-gray-700 mb-1 font-bold text-sm`}>
           {university}
         </p>
         <p className={font`text-gray-500 font-bold text-xs`}>{degree}</p>

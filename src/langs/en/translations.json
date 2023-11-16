@@ -38,7 +38,19 @@
       "title": "Skills"
     },
     "workExperience": {
-      "title": "Work Experience"
+      "title": "Work Experience",
+      "items": [
+        {
+          "title": "Frontend Developer",
+          "company": "National Supercomputing Center, Wuxi",
+          "descriptions": [
+            "Implemented a comprehensive dashboard with Vue.js for job status visualisation",
+            "Created detailed visualisation for job statistics with echarts",
+            "Developed an API gateway facilatating communication between the web interface and backend service",
+            "Refactoring and optimising existing code to user interface performance"
+          ]
+        }
+      ]
     }
   }
 }

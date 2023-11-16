@@ -1,7 +1,14 @@
 import { TypedUseSelectorHook, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "./store";
 import { useSelector } from "react-redux";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState
+} from "react";
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
@@ -51,3 +58,12 @@ export const useAnimationFrame = (callback: (time: number) => void) => {
     };
   }, []);
 };
+
+const UpdateContext = createContext<((deltaHeight: number) => void) | null>(
+  null
+);
+
+export const useTriggerUpdate = () => {
+  return useContext(UpdateContext);
+};
+export const UpdateContextProvider = UpdateContext.Provider;
