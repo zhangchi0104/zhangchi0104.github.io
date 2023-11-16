@@ -1,7 +1,9 @@
-type EventHandlerCallback = () => void;
+type EventHandlerCallback<P extends any = void, V extends any = void> = (
+  val: P
+) => V;
 
 export class EventManager<E extends string = string> {
-  private handlersByEvent: { [key: string]: EventHandlerCallback[] } = {};
+  private handlersByEvent: { [key: string]: (() => void)[] } = {};
   on(event: E, handler: EventHandlerCallback) {
     if (!this.handlersByEvent[event]) {
       this.handlersByEvent[event] = [];
@@ -61,3 +63,34 @@ export const getRefreshRate = () =>
       requestAnimationFrame((t2) => resolve(1000 / (t2 - t1)))
     )
   );
+
+export type Path<T> = T extends object
+  ? {
+      [K in keyof T]: K extends string | number
+        ? `${K}` | `${K}.${Path<T[K]>}`
+        : never;
+    }[keyof T]
+  : never;
+
+export type FieldType<
+  T,
+  P extends Path<T>
+> = P extends `${infer K}.${infer Rest}`
+  ? K extends keyof T
+    ? Rest extends Path<T[K]>
+      ? FieldType<T[K], Rest>
+      : never
+    : never
+  : P extends keyof T
+  ? T[P]
+  : never;
+
+export type MutuallyExclude<T, E extends keyof T> =
+  | {
+      [K in E]: { [P in K]: T[P] } & Omit<T, E> & {
+          [P in Exclude<E, K>]?: never;
+        } extends infer O
+        ? { [P in keyof O]: O[P] }
+        : never;
+    }[E]
+  | ({ [K in E]?: never } & Omit<T, E>);

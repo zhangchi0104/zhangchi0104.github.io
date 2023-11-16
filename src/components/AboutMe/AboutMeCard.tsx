@@ -1,8 +1,10 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
+import React, { useEffect, useState, useTransition } from "react";
 import { Card } from "../Card";
 import Collapsable from "../Collapsable";
+import { useTriggerUpdate } from "@/hooks";
+import { flushSync } from "react-dom";
 
 interface AboutMeCardSelfProps {
   heading: string | JSX.Element;
@@ -31,8 +33,12 @@ const AboutMeCardHeader: React.FC<AboutMeCardHeaderProps> = ({
         } mr-8 hover:cursor-pointer`}
       />
       <div className="flex flex-col">
-        <div className="text-lg font-bold text-gray-700">{heading}</div>
-        <div className="text-gray-500">{subheading}</div>
+        <div className="text-sm font-bold text-gray-700 tracking-wide">
+          {heading}
+        </div>
+        <div className="text-sm font-bold text-gray-500 tracking-wide">
+          {subheading}
+        </div>
       </div>
     </div>
   );
@@ -45,15 +51,20 @@ const AboueMeCard: React.FC<AboutMeCardProps> = ({
   className
 }) => {
   const [expanded, setExpanded] = useState(false);
+
   return (
     <Card className={`px-8 py-2 ${className ?? ""}`}>
       <AboutMeCardHeader
         heading={heading}
         subheading={subheading}
         expanded={expanded}
-        onClick={() => setExpanded(!expanded)}
+        onClick={() => {
+          setExpanded(!expanded);
+        }}
       />
-      <Collapsable collapsed={!expanded}>{children}</Collapsable>
+      <Collapsable observable collapsed={!expanded}>
+        {children}
+      </Collapsable>
     </Card>
   );
 };
