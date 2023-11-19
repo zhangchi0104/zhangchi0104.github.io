@@ -49,7 +49,10 @@ const Education: React.FC = () => {
   const { t } = useTranslation();
   return (
     <Section title={t("aboutMe.education.title")}>
-      {t("aboutMe.education.items", { returnObjects: true }).map((props) => (
+      {t("aboutMe.education.items", {
+        returnObjects: true,
+        fallbackLng: "en"
+      }).map((props) => (
         <UniversityCard
           {...props}
           className="mb-4"

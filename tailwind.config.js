@@ -5,7 +5,8 @@ module.exports = {
       animation: {
         "fade-in": "fade-in 0.3s cubic-bezier(0.4, 0, 1, 1)",
         "fade-bounce-in": "fade-bounce-in 0.3s cubic-bezier(0.4, 0, 1, 1)",
-        "bounce-emphasis": "bounce-emphasis 0.3s cubic-bezier(0.4, 0, 1, 1)"
+        "bounce-emphasis": "bounce-emphasis 0.3s cubic-bezier(0.4, 0, 1, 1)",
+        "bounce-in-x": "bounce-in-x 1.5s ease-in-out 0.3s"
       },
       keyframes: {
         "fade-in": {
@@ -50,10 +51,15 @@ module.exports = {
           "100%": {
             transform: "scaleX(1)"
           }
+        },
+        "bounce-in-x": {
+          "0%": {
+            transform: "scaleX(0)"
+          },
+          "100%": {
+            transform: "scaleX(1)"
+          }
         }
-      },
-      backgroundImage: {
-        "unimelb-logo": "url(/img/unimelb.svg)"
       }
     }
   },

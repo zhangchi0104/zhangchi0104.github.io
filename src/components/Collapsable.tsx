@@ -1,4 +1,4 @@
-import { useTriggerUpdate } from "@/hooks";
+import { CollapsedStateProvider, useTriggerUpdate } from "@/hooks";
 import React, {
   useEffect,
   useImperativeHandle,
@@ -57,7 +57,9 @@ const Collapsable = React.forwardRef<CollapsableHandle, CollapsablePropsCommon>(
         className={`${css} ${animation}`}
         style={{ height: heightStyle }}
       >
-        {children}
+        <CollapsedStateProvider value={collapsed}>
+          {children}
+        </CollapsedStateProvider>
       </div>
     );
   }

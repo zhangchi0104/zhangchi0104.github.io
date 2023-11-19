@@ -24,14 +24,17 @@ const AboutMeCardHeader: React.FC<AboutMeCardHeaderProps> = ({
   onClick
 }) => {
   return (
-    <div className="flex flex-row justify-start items-center">
-      <FontAwesomeIcon
-        icon={faChevronRight}
-        onClick={onClick}
-        className={`transition ease-in-out ${
-          expanded ? "rotate-90" : ""
-        } mr-8 hover:cursor-pointer`}
-      />
+    <div className="flex flex-row justify-start items-start">
+      <p className="text-sm">
+        <FontAwesomeIcon
+          icon={faChevronRight}
+          onClick={onClick}
+          size="xs"
+          className={`transition ease-in-out text-xs text-gray-700 ${
+            expanded ? "rotate-90" : ""
+          } mr-6 hover:cursor-pointer`}
+        />
+      </p>
       <div className="flex flex-col">
         <div className="text-sm font-bold text-gray-700 tracking-wide">
           {heading}
@@ -53,7 +56,7 @@ const AboueMeCard: React.FC<AboutMeCardProps> = ({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <Card className={`px-8 py-4 ${className ?? ""}`}>
+    <Card className={`px-8 py-6 ${className ?? ""}`}>
       <AboutMeCardHeader
         heading={heading}
         subheading={subheading}
