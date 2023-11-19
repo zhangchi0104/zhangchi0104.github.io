@@ -67,3 +67,7 @@ export const useTriggerUpdate = () => {
   return useContext(UpdateContext);
 };
 export const UpdateContextProvider = UpdateContext.Provider;
+
+const CollapsedContext = createContext(true);
+export const useParentCollapsedState = () => useContext(CollapsedContext);
+export const CollapsedStateProvider = CollapsedContext.Provider;

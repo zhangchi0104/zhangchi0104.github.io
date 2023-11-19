@@ -35,7 +35,22 @@
       ]
     },
     "skills": {
-      "title": "Skills"
+      "title": "Skills",
+      "items": [
+        {
+          "heading": "Frontend",
+          "subheading": "Familiar with HTML, CSS, JS; uses React, Tailwind",
+          "skillset": {
+            "HTML": 4,
+            "CSS": 4,
+            "JavaScript": 4,
+            "TypeScript": 3,
+            "React": 3,
+            "Vue2": 2,
+            "Redux": 3
+          }
+        }
+      ]
     },
     "workExperience": {
       "title": "Work Experience",
