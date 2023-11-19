@@ -1,4 +1,10 @@
-import { CollapsedStateProvider, useTriggerUpdate } from "@/hooks";
+import {
+  CollapsedStateProvider,
+  useAppDispatch,
+  useAppSelector,
+  useTriggerUpdate
+} from "@/hooks";
+import { selectFancyModeEnabled } from "@/store/selectors";
 import React, {
   useEffect,
   useImperativeHandle,
@@ -7,6 +13,7 @@ import React, {
   useRef,
   useState
 } from "react";
+import { useTranslation } from "react-i18next";
 type CollapsablePropsCommon = React.PropsWithChildren<{
   className?: string;
   collapsed: boolean;
@@ -22,16 +29,18 @@ const Collapsable = React.forwardRef<CollapsableHandle, CollapsablePropsCommon>(
     const [height, setHeight] = useState<number | null>(null);
     const heightStyle = useMemo(() => height + "px", [height]);
     const notify = useTriggerUpdate();
+    const { i18n } = useTranslation();
+    const locale = i18n.language;
     useLayoutEffect(() => {
-      setHeight(collapsed ? 0 : selfRef.current?.scrollHeight ?? 0);
-    }, [collapsed]);
+      setHeight(collapsed ? 0 : selfRef.current!.scrollHeight);
+    }, [collapsed, locale]);
 
     useEffect(() => {
       if (observable && notify) {
         notify(
           collapsed
-            ? 0 - (selfRef.current?.scrollHeight ?? 0)
-            : selfRef.current?.scrollHeight ?? 0
+            ? 0 - (selfRef.current!.scrollHeight ?? 0)
+            : selfRef.current!.scrollHeight ?? 0
         );
       }
     }, [height]);
@@ -49,13 +58,14 @@ const Collapsable = React.forwardRef<CollapsableHandle, CollapsablePropsCommon>(
     );
 
     useLayoutEffect(() => {}, [collapsed]);
-    const animation = `transition-[height] origin-top ease-in-out duration-500`;
+    const animation = `transition-[max-height] origin-top ease-in-out duration-500`;
     const css = `overflow-hidden ${className ?? ""}`;
+    const fancyModeEnabled = useAppSelector(selectFancyModeEnabled);
     return (
       <div
         ref={selfRef}
-        className={`${css} ${animation}`}
-        style={{ height: heightStyle }}
+        className={`${css} ${fancyModeEnabled ? animation : ""}`}
+        style={{ maxHeight: heightStyle }}
       >
         <CollapsedStateProvider value={collapsed}>
           {children}

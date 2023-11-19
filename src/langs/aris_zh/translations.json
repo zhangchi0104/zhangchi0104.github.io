@@ -1,0 +1,71 @@
+{
+  "navbar": {
+    "home": "Home",
+    "aboutMe": "About Me",
+    "projects": "Projects"
+  },
+  "home": {
+    "heading": "👋🏻G'Day! I'm Alex.",
+    "subheading1": "Millenimum School",
+    "subheading2": "ADC (light)",
+    "mail": {
+      "dialog": {
+        "title": "Mail",
+        "hint": "click to copy",
+        "toast": "COPIED"
+      }
+    }
+  },
+  "aboutMe": {
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "university": "University of Melbourne",
+          "degree": "Master of IT",
+          "duration": "Jul 2023 - Present",
+          "backgroundUrl": "/static/imgs/unimelb.svg"
+        },
+        {
+          "university": "UNSW Sydney",
+          "degree": "B Sci. (Honours) / B Comm (Fintech)",
+          "duration": "Feb 2018 - Dec 2022",
+          "backgroundUrl": "/static/imgs/unsw.svg"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "items": [
+        {
+          "heading": "Frontend",
+          "subheading": "Familiar with HTML, CSS, JS; uses React, Tailwind",
+          "skillset": {
+            "HTML": 4,
+            "CSS": 4,
+            "JavaScript": 4,
+            "TypeScript": 3,
+            "React": 3,
+            "Vue2": 2,
+            "Redux": 3
+          }
+        }
+      ]
+    },
+    "workExperience": {
+      "title": "Work Experience",
+      "items": [
+        {
+          "title": "Frontend Developer",
+          "company": "National Supercomputing Center, Wuxi",
+          "descriptions": [
+            "Implemented a comprehensive dashboard with Vue.js for job status visualisation",
+            "Created detailed visualisation for job statistics with echarts",
+            "Developed an API gateway facilatating communication between the web interface and backend service",
+            "Refactoring and optimising existing code to user interface performance"
+          ]
+        }
+      ]
+    }
+  }
+}

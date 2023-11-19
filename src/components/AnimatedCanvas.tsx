@@ -1,11 +1,13 @@
-import React, { useLayoutEffect, useState } from "react";
-import { useAnimationFrame } from "../hooks";
+import React, { useLayoutEffect } from "react";
+import { useAnimationFrame, useAppSelector } from "../hooks";
 import { round } from "lodash";
 import ParticleAnimation from "../animation";
+import { selectFancyModeEnabled } from "@/store/selectors";
 
 const AnimatedCavnas: React.FC = () => {
   const canvasRef = React.useRef<HTMLCanvasElement>(null);
   const animationRef = React.useRef<ParticleAnimation | null>(null);
+  const fancyModeEnabled = useAppSelector(selectFancyModeEnabled);
   useLayoutEffect(() => {
     if (!canvasRef.current) {
       return;
@@ -51,7 +53,12 @@ const AnimatedCavnas: React.FC = () => {
     animationRef.current?.draw(ctx);
   });
   return (
-    <canvas className="-z-10 h-screen w-screen fixed" ref={canvasRef}></canvas>
+    fancyModeEnabled && (
+      <canvas
+        className="-z-10 h-screen w-screen fixed"
+        ref={canvasRef}
+      ></canvas>
+    )
   );
 };
 

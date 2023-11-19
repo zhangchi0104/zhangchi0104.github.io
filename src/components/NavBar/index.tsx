@@ -4,6 +4,7 @@ import { SectionName } from "@/store/slices/root";
 import LanguageSelector from "./LanguageSelector";
 import { useMediaQuery } from "@/hooks";
 import { useTranslation } from "react-i18next";
+import Settings from "./Settings";
 type ItemSelectCallback = (name: SectionName) => void;
 const MobileNavBar = () => {
   return (
@@ -43,7 +44,7 @@ const DesktopNavBar: React.FC<{ onClick: ItemSelectCallback }> = ({
         >
           {t("navbar.projects")}
         </NavBarItem>
-        <LanguageSelector />
+        <Settings />
       </div>
     </nav>
   );

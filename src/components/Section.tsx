@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import Collapsable, { CollapsableHandle } from "./Collapsable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
-import { UpdateContextProvider } from "@/hooks";
+import { UpdateContextProvider, useAppSelector } from "@/hooks";
+import { selectFancyModeEnabled } from "@/store/selectors";
 
 type SectionProps = React.PropsWithChildren<{
   className?: string;
@@ -12,14 +13,12 @@ type SectionProps = React.PropsWithChildren<{
 const Section: React.FC<SectionProps> = ({ className, children, title }) => {
   const [collapsed, setCollapsed] = useState(false);
   const ref = useRef<CollapsableHandle>(null);
-
+  const animation = `transition ${collapsed ? "" : "rotate-90"}`;
   return (
     <div className={`mx-4 mb-4 ${className ?? ""}`}>
       <div className="flex flex-row items-center justify-center mb-2 ">
         <span
-          className={`transition ${
-            collapsed ? "" : "rotate-90"
-          } hover:cursor-pointer`}
+          className={`${animation} hover:cursor-pointer`}
           onClick={() => setCollapsed(!collapsed)}
         >
           <FontAwesomeIcon icon={faCaretRight} />
