@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {
   const dispatch = useAppDispatch();
   const { t } = useTranslation();
+
   return (
     <IntersectionDetector
       onEnter={() => dispatch(setActiveSectionName("about-me"))}

@@ -8,3 +8,5 @@ export const selectActiveSectionName = (state: RootState) =>
 
 export const selectActiveSection = (state: RootState) =>
   state.root.activeSection;
+
+export const selectLocale = (state: RootState) => state.root.locale;

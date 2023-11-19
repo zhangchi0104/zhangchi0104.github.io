@@ -1,0 +1,75 @@
+{
+  "navbar": {
+    "home": "Home",
+    "aboutMe": "About Me",
+    "projects": "Projects"
+  },
+  "home": {
+    "heading": "👋🏻Ban-ba-ka-ban! Arisu Desu",
+    "subheading1": "Millennium Science School",
+    "subheading2": "Princess of Nameless Gods ",
+    "mail": {
+      "dialog": {
+        "title": "Mail",
+        "hint": "click to copy",
+        "toast": "COPIED"
+      }
+    }
+  },
+  "aboutMe": {
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "university": "Millenimum Science School",
+          "degree": "Year 1",
+          "duration": "Current",
+          "backgroundUrl": "/static/imgs/millennium.png"
+        }
+      ]
+    },
+    "skills": {
+      "title": "Skills",
+      "items": [
+        {
+          "heading": "Game Development",
+          "subheading": "Jaba Developer",
+          "skillset": {
+            "Jaba": 3,
+            "Playwright": 3
+          }
+        },
+        {
+          "heading": "DPS (light)/ Tank",
+          "skillset": {
+            "Light Saber Supernova": 5,
+            "Courage": 5,
+            "Team Player": 5
+          }
+        }
+      ]
+    },
+    "workExperience": {
+      "title": "Work Experience",
+      "items": [
+        {
+          "title": "Jaba Developer",
+          "company": "Game Development Department",
+          "descriptions": [
+            "Very power efficient",
+            "Developped a game with other members"
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "title": "Projects",
+      "items": [
+        {
+          "heading": "Tales Saga Chronicles 2,",
+          "descriptions": ["Won the Millennium Prize"]
+        }
+      ]
+    }
+  }
+}

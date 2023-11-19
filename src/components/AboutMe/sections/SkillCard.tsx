@@ -35,7 +35,6 @@ const SkillBar: React.FC<SkillBarProps> = ({ name, level, className }) => {
     ? ""
     : "scale-x-0 absolute animate-bounce-in-x";
   const levelNumber = `${20 * level}%`;
-  console.log({ parentCollapsed });
   return (
     <div className={className}>
       <div className="flex justify-between text-sm font-bold text-gray-700 tracking-wide mx-1">
