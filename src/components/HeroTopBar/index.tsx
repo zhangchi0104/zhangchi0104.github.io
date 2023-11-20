@@ -9,9 +9,9 @@ const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
       className="mx-4 flex flex-col-reverse md:grid md:grid-cols-3 md:gap-4 h-screen items-center p-4 justify-center"
       ref={ref}
     >
-      <div className="col-span-2">
+      <div className="col-span-2 text-center md:text-left">
         <IntroText />
-        <div className="mt-2 flex mx-auto md:mt-12 flex-row">
+        <div className="mt-2 flex mx-auto md:mt-12 flex-row justify-center md:justify-normal">
           <SocialIconsBar />
         </div>
       </div>
