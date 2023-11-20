@@ -1,9 +1,8 @@
 import React from "react";
 
 import IntersectionDetector from "../IntersectionObserver";
-import { useAppDispatch, useAppSelector } from "@/hooks";
+import { useAppDispatch } from "@/hooks";
 import { setActiveSectionName } from "@/store/actions";
-import { selectLocale } from "@/store/selectors";
 import { useTranslation } from "react-i18next";
 import ProjectCard from "./ProjectCard";
 

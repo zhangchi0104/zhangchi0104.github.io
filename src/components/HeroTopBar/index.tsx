@@ -2,6 +2,9 @@ import React from "react";
 import ProfilePhoto from "./ProfilePhoto";
 import IntroText from "./IntroText";
 import SocialIconsBar from "./SocialIconsBar";
+import IntersectionDetector from "../IntersectionObserver";
+import { useAppDispatch } from "@/hooks";
+import { setScrolled } from "@/store/actions";
 
 const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
@@ -23,11 +26,16 @@ const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
 });
 
 const HeroTopBar = React.forwardRef<HTMLDivElement>((_, ref) => {
-  // useSubscribeToIntersectionObserver(ref);
+  const dispatch = useAppDispatch();
   return (
-    <div ref={ref} data-section="home">
+    <IntersectionDetector
+      ref={ref}
+      threshold={0.98}
+      onEnter={() => dispatch(setScrolled(false))}
+      onLeave={() => dispatch(setScrolled(true))}
+    >
       <HeroTopBarContent />
-    </div>
+    </IntersectionDetector>
   );
 });
 
