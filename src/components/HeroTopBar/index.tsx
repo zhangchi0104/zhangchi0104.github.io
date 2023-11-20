@@ -2,8 +2,12 @@ import React, { Suspense } from "react";
 const ProfilePhoto = React.lazy(
   () => import(/* webpackChunkName: "profile-photo" */ "./ProfilePhoto")
 );
-import IntroText from "./IntroText";
-import SocialIconsBar from "./SocialIconsBar";
+const IntroText = React.lazy(
+  () => import(/* webpackChunkName: "intro-text" */ "./IntroText")
+);
+const SocialIconsBar = React.lazy(
+  () => import(/* webpackChunkName: "social-icons" */ "./SocialIconsBar")
+);
 import IntersectionDetector from "../IntersectionObserver";
 import { useAppDispatch } from "@/hooks";
 import { setScrolled } from "@/store/actions";
@@ -16,7 +20,9 @@ const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
       ref={ref}
     >
       <div className="col-span-2 text-center md:text-left">
-        <IntroText />
+        <Suspense fallback={<Loading />}>
+          <IntroText />
+        </Suspense>
         <div className="mt-2 flex mx-auto md:mt-12 flex-row justify-center md:justify-normal">
           <SocialIconsBar />
         </div>

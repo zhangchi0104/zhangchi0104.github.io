@@ -1,10 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import IntersectionDetector from "../IntersectionObserver";
 import { useAppDispatch } from "@/hooks";
 import { setActiveSectionName } from "@/store/actions";
 import { useTranslation } from "react-i18next";
-import ProjectCard from "./ProjectCard";
+import Loading from "../Loading";
+const ProjectCard = React.lazy(
+  () => import(/* webpackChunkName: "project-card" */ "./ProjectCard")
+);
 
 const Projects = React.forwardRef<HTMLDivElement>(({}, ref) => {
   const dispatch = useAppDispatch();
@@ -24,15 +27,20 @@ const Projects = React.forwardRef<HTMLDivElement>(({}, ref) => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-start mx-4 mb-4">
         {items.map((props) => (
-          <ProjectCard
-            heading={props.heading}
-            subheading={props.subheading}
-            descriptions={props.descriptions}
-            // image={props.background}
-            url={props.url}
-            className="mx-2"
-            key={props.heading + props.descriptions.join("")}
-          />
+          <Suspense
+            key={props.heading + props.descriptions.join("") + "outer"}
+            fallback={<Loading />}
+          >
+            <ProjectCard
+              heading={props.heading}
+              subheading={props.subheading}
+              descriptions={props.descriptions}
+              // image={props.background}
+              url={props.url}
+              className="mx-2"
+              key={props.heading + props.descriptions.join("")}
+            />
+          </Suspense>
         ))}
       </div>
     </IntersectionDetector>

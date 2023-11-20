@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React, { Suspense, useRef } from "react";
 import HeroTopBar from "./components/HeroTopBar";
-import AnimatedCavnas from "./components/AnimatedCanvas";
+const AnimatedCavnas = React.lazy(() => import("./components/AnimatedCanvas"));
 import NavBar from "./components/NavBar";
 import AboutMe from "./components/AboutMe";
 import { SectionName } from "./store/slices/root";
@@ -36,8 +36,9 @@ const App: React.FC = () => {
 
   return (
     <>
-      <AnimatedCavnas />
-
+      <Suspense fallback={<div className="hidden"></div>}>
+        <AnimatedCavnas />
+      </Suspense>
       <div className="max-w-screen-lg mx-auto">
         <HeroTopBar ref={homeRef} />
         <AboutMe ref={aboutMeRef} />

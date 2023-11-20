@@ -5,5 +5,6 @@ module.exports = {
     "postcss-url": {
       url: "rebase"
     }
-  }
+  },
+  extract: "./dist/styles.css"
 };
