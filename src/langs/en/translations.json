@@ -2,7 +2,8 @@
   "navbar": {
     "home": "Home",
     "aboutMe": "About Me",
-    "projects": "Projects"
+    "projects": "Projects",
+    "name": "Alex Zhang"
   },
   "home": {
     "heading": "👋🏻G'Day! I'm Alex.",

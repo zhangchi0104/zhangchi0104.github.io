@@ -7,12 +7,13 @@ import { useTranslation } from "react-i18next";
 import Settings from "./Settings";
 type ItemSelectCallback = (name: SectionName) => void;
 const MobileNavBar = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex justify-between w-screen py-2 px-4 bg-amber-50 fixed items-center">
       <div className="text-2xl font-semibold text-gray-700 text-center">
-        Alex Zhang
+        {t("navbar.name")}
       </div>
-      <LanguageSelector />
+      <Settings />
     </div>
   );
 };
