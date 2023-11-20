@@ -13,6 +13,7 @@ i18next
     debug: process.env.NODE_ENV === "development",
     fallbackLng: "en",
     defaultNS: "translations",
+
     resources: {
       en: {
         translations: translationsEn

@@ -32,7 +32,11 @@ const LanguageMemu: React.FC = () => {
       </li>
       <li
         data-value="en"
-        className={`${locale === "en" ? "font-bold text-sky-900" : ""} mt-3`}
+        className={`${
+          locale.startsWith("en-") || locale === "en"
+            ? "font-bold text-sky-900"
+            : ""
+        } mt-3`}
         onClick={() => onLangListClick("en")}
       >
         English
