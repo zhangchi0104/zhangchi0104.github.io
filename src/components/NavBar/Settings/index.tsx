@@ -7,16 +7,9 @@ import LanguageMemu from "./LanguageMenu";
 import FancyModeToggle from "./FancyModeToggle";
 
 const Settings: React.FC = () => {
-  const { i18n } = useTranslation();
-  const [locale, setLocale] = useState(i18n.language);
   const [dropdownVisibility, setDropdownVisibility] = useState(false);
   const anchorRef = useRef<HTMLDivElement>(null);
-  const setLanguage = (lang: string) => {
-    if (lang === locale) {
-      return;
-    }
-    i18n.changeLanguage(lang).then(() => setLocale(lang));
-  };
+
   const toggleDropdown = () => {
     setDropdownVisibility(!dropdownVisibility);
   };

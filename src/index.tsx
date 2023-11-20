@@ -5,6 +5,7 @@ import "./main.css";
 import "./i18n";
 import { Provider } from "react-redux";
 import { store } from "./store";
+
 const elem = document.getElementById("app");
 
 if (elem != null) {

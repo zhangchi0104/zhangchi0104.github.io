@@ -27,10 +27,10 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
       <div className="mt-2">
         {descriptions.map((item, i) => (
           <p
-            className="text-gray-700 text-sm mb-1 flex tracking-wide font-bold"
+            className="text-gray-700 text-sm mb-1 flex tracking-wide"
             key={`${title}-${company}-${item}`}
           >
-            <span className="mr-4 font-bold">-</span>
+            <span className="mr-4">-</span>
             {item}
           </p>
         ))}

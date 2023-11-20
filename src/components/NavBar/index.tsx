@@ -7,12 +7,13 @@ import { useTranslation } from "react-i18next";
 import Settings from "./Settings";
 type ItemSelectCallback = (name: SectionName) => void;
 const MobileNavBar = () => {
+  const { t } = useTranslation();
   return (
     <div className="flex justify-between w-screen py-2 px-4 bg-amber-50 fixed items-center">
       <div className="text-2xl font-semibold text-gray-700 text-center">
-        Alex Zhang
+        {t("navbar.name")}
       </div>
-      <LanguageSelector />
+      <Settings />
     </div>
   );
 };
@@ -21,8 +22,8 @@ const DesktopNavBar: React.FC<{ onClick: ItemSelectCallback }> = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <nav className="fixed w-full max-w-screen-lg py-2 pl-4 pr-4 bg-amber-50 justify-center z-50">
-      <div className="flex flex-row md:justify-end items-center">
+    <nav className="fixed w-full  py-2 pl-4 pr-4 bg-amber-50 justify-center z-50">
+      <div className="flex max-w-screen-lg flex-row md:justify-end items-center">
         <NavBarItem
           className="mr-8 md:mr-12 lg:mr-20"
           name="home"

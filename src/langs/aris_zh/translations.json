@@ -2,68 +2,82 @@
   "navbar": {
     "home": "Home",
     "aboutMe": "About Me",
-    "projects": "Projects"
+    "projects": "Projects",
+    "name": "天童 爱丽丝"
   },
   "home": {
-    "heading": "👋🏻G'Day! I'm Alex.",
-    "subheading1": "Millenimum School",
-    "subheading2": "ADC (light)",
+    "heading": "👋🏻邦吧咔邦",
+    "subheading1": "千年科技学园",
+    "subheading2": "光属性DPS",
     "mail": {
       "dialog": {
-        "title": "Mail",
-        "hint": "click to copy",
-        "toast": "COPIED"
+        "title": "邮箱",
+        "hint": "点击以复制",
+        "toast": "已复制"
       }
     }
   },
   "aboutMe": {
     "education": {
-      "title": "Education",
+      "title": "学历",
       "items": [
         {
-          "university": "University of Melbourne",
-          "degree": "Master of IT",
-          "duration": "Jul 2023 - Present",
-          "backgroundUrl": "/static/imgs/unimelb.svg"
-        },
-        {
-          "university": "UNSW Sydney",
-          "degree": "B Sci. (Honours) / B Comm (Fintech)",
-          "duration": "Feb 2018 - Dec 2022",
-          "backgroundUrl": "/static/imgs/unsw.svg"
+          "university": "千年科技学园",
+          "degree": "一年级",
+          "duration": "至今",
+          "backgroundUrl": "/static/imgs/millennium.png"
         }
       ]
     },
     "skills": {
-      "title": "Skills",
+      "title": "技能",
       "items": [
         {
-          "heading": "Frontend",
-          "subheading": "Familiar with HTML, CSS, JS; uses React, Tailwind",
+          "heading": "游戏开发",
+          "subheading": "Jaba程序媛（大概",
           "skillset": {
-            "HTML": 4,
-            "CSS": 4,
-            "JavaScript": 4,
-            "TypeScript": 3,
-            "React": 3,
-            "Vue2": 2,
-            "Redux": 3
+            "Jaba": 3,
+            "游戏编剧": 5
+          }
+        },
+        {
+          "heading": "家政清洁",
+          "subheading": "\"爱丽丝不是扫地机器人\"",
+          "skillset": {
+            "可爱": 5,
+            "打扫": 5
+          }
+        },
+        {
+          "heading": "光属性DPS/坦克",
+          "skillset": {
+            "光之剑·超新星": 5,
+            "勇气": 5,
+            "团队": 5
           }
         }
       ]
     },
     "workExperience": {
-      "title": "Work Experience",
+      "title": "工作经验",
       "items": [
         {
-          "title": "Frontend Developer",
-          "company": "National Supercomputing Center, Wuxi",
+          "title": "游戏核心开发者",
+          "company": "千年科技学院 游戏开发部",
           "descriptions": [
-            "Implemented a comprehensive dashboard with Vue.js for job status visualisation",
-            "Created detailed visualisation for job statistics with echarts",
-            "Developed an API gateway facilatating communication between the web interface and backend service",
-            "Refactoring and optimising existing code to user interface performance"
+            "高能效比jaba程序媛",
+            "与其他部员一同开发了知名游戏续作",
+            "体验过许多复古游戏"
           ]
+        }
+      ]
+    },
+    "projects": {
+      "title": "项目经理",
+      "items": [
+        {
+          "heading": "Tales Saga Chronicles 2",
+          "descriptions": ["Won the Millennium Prize"]
         }
       ]
     }

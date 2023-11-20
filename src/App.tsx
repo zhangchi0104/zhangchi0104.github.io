@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 import AboutMe from "./components/AboutMe";
 import { SectionName } from "./store/slices/root";
 import Projects from "./components/Projects";
+
 const App: React.FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
@@ -32,10 +33,11 @@ const App: React.FC = () => {
       }
     }
   };
+
   return (
     <>
       <AnimatedCavnas />
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen- mx-auto">
         <NavBar onClick={onNavBarClick}></NavBar>
         <HeroTopBar ref={homeRef} />
         <AboutMe ref={aboutMeRef} />
