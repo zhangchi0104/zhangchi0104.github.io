@@ -1,5 +1,6 @@
 import React from "react";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
+import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
 import FaIcon from "./FaIcon";
 import MailIcon from "./MailIcon";
 const SocialIconsBar: React.FC = () => {

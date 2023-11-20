@@ -1,5 +1,5 @@
-import React, { useEffect, useLayoutEffect, useState } from "react";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect, useState } from "react";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dialog from "../../Dialog";
 import FaIcon from "./FaIcon";
@@ -8,7 +8,7 @@ const EMAIL = "alex@otakuma.dev";
 interface MailIconInterface {
   className?: string;
 }
-const MailIcon: React.FC<MailIconInterface> = ({ className }) => {
+const MailIcon: React.FC<MailIconInterface> = ({}) => {
   const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [showToast, setShowToast] = useState(false);
@@ -25,7 +25,6 @@ const MailIcon: React.FC<MailIconInterface> = ({ className }) => {
   useEffect(() => {
     if (showToast) {
       const timeout = setTimeout(() => {
-        console.log("Setting showToast to True");
         setShowToast(false);
         clearTimeout(timeout);
       }, 1200);

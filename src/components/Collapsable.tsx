@@ -1,6 +1,5 @@
 import {
   CollapsedStateProvider,
-  useAppDispatch,
   useAppSelector,
   useTriggerUpdate
 } from "@/hooks";
@@ -58,7 +57,8 @@ const Collapsable = React.forwardRef<CollapsableHandle, CollapsablePropsCommon>(
     );
 
     useLayoutEffect(() => {}, [collapsed]);
-    const animation = `transition-[max-height] origin-top ease-in-out duration-500`;
+    const animation =
+      "transition-[max-height] origin-top ease-in-out duration-500";
     const css = `overflow-hidden ${className ?? ""}`;
     const fancyModeEnabled = useAppSelector(selectFancyModeEnabled);
     return (

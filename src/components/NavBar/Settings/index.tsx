@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-import { useTranslation } from "react-i18next";
 import Dropdown from "../../Dropdown";
 import GearsIcon from "../../icons/GearIcon";
 import LanguageMemu from "./LanguageMenu";

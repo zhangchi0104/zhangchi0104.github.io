@@ -65,7 +65,6 @@ const DesktopNavBar: React.FC<{
 };
 const NavBar: React.FC<{ onClick: ItemSelectCallback }> = ({ onClick }) => {
   const match = useMediaQuery("(min-width: 640px)");
-  console.log("match", match);
   const scrolled = useAppSelector(selectScrolled);
 
   return (

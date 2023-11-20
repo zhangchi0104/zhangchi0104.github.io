@@ -53,7 +53,6 @@ abstract class Particle
   }
 
   draw(ctx: CanvasRenderingContext2D, refreshRate = 60) {
-    // console.log("draw");
     const { deg } = this;
     const { x: centerX, y: centerY } = this.center;
     if (!this.visible(ctx)) {

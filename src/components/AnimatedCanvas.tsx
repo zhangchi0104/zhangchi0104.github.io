@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import { useAnimationFrame, useAppSelector } from "../hooks";
-import { round } from "lodash";
+import round from "lodash/round";
 import ParticleAnimation from "../animation";
 import { selectFancyModeEnabled } from "@/store/selectors";
 
@@ -33,7 +33,6 @@ const AnimatedCavnas: React.FC = () => {
   });
 
   useAnimationFrame((time) => {
-    // console.log("animation fram e " + time);
     if (!canvasRef.current) {
       return;
     }

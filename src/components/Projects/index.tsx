@@ -28,7 +28,7 @@ const Projects = React.forwardRef<HTMLDivElement>(({}, ref) => {
             heading={props.heading}
             subheading={props.subheading}
             descriptions={props.descriptions}
-            image={props.background}
+            // image={props.background}
             url={props.url}
             className="mx-2"
             key={props.heading + props.descriptions.join("")}

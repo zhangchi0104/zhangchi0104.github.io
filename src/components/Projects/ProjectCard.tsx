@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from "react";
-import AboueMeCard from "../AboutMe/AboutMeCard";
-import AboutMeCard from "../AboutMe/AboutMeCard";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faLink } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
+import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { useAppSelector } from "@/hooks";
 import { selectFancyModeEnabled } from "@/store/selectors";
 import Collapsable from "../Collapsable";
@@ -22,7 +22,6 @@ type ProjectCarHeaderProps = Omit<ProjectCardProps, "descriptions"> & {
 };
 
 const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
-  className,
   heading,
   subheading,
   image,
