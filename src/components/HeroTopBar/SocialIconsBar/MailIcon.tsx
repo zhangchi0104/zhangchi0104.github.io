@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import React, { Suspense, useEffect, useState } from "react";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Dialog from "../../Dialog";
+const Dialog = React.lazy(() => import("@/components/Dialog"));
 import FaIcon from "./FaIcon";
 import { useTranslation } from "react-i18next";
+import Loading from "@/components/Loading";
 const EMAIL = "alex@otakuma.dev";
 interface MailIconInterface {
   className?: string;
@@ -50,24 +51,26 @@ const MailIcon: React.FC<MailIconInterface> = ({}) => {
       <button onClick={() => setShowModal(true)}>
         <FaIcon icon={faEnvelope} />
       </button>
-      <Dialog
-        visibility={showModal}
-        onClose={() => setShowModal(false)}
-        icon={<FontAwesomeIcon icon={faEnvelope} size="lg" />}
-        title={titleElem}
-      >
-        <p
-          className="px-16 pt-5 pb-2 hover:cursor-pointer"
-          onClick={() => onEmailClick()}
+      <Suspense fallback={<div className="hidden"></div>}>
+        <Dialog
+          visibility={showModal}
+          onClose={() => setShowModal(false)}
+          icon={<FontAwesomeIcon icon={faEnvelope} size="lg" />}
+          title={titleElem}
         >
-          {EMAIL}
-        </p>
-        <div className={toastContainerCss}>
-          <span className={`${toastCssBase}`}>
-            {t("home.mail.dialog.toast")}
-          </span>
-        </div>
-      </Dialog>
+          <p
+            className="px-16 pt-5 pb-2 hover:cursor-pointer"
+            onClick={() => onEmailClick()}
+          >
+            {EMAIL}
+          </p>
+          <div className={toastContainerCss}>
+            <span className={`${toastCssBase}`}>
+              {t("home.mail.dialog.toast")}
+            </span>
+          </div>
+        </Dialog>
+      </Suspense>
     </>
   );
 };

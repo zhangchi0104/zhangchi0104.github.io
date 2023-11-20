@@ -1,9 +1,6 @@
 const path = require("path");
 const CopyFilePlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
-
 module.exports = {
   entry: "./src/index.tsx",
   output: {
@@ -18,8 +15,7 @@ module.exports = {
     }),
     new CopyFilePlugin({
       patterns: [{ from: "static", to: "static" }]
-    }),
-    new BundleAnalyzerPlugin()
+    })
   ],
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.
@@ -41,20 +37,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "style-loader"
-          },
-          {
-            loader: "css-loader",
-            options: {
-              importLoaders: 1
-            }
-          },
-          {
-            loader: "postcss-loader"
-          }
-        ]
+        use: ["style-loader", "css-loader", "postcss-loader"]
       }
     ]
   }
