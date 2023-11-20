@@ -17,12 +17,12 @@ const Section: React.FC<SectionProps> = ({ className, children, title }) => {
   return (
     <div className={`mx-4 mb-4 ${className ?? ""}`}>
       <div className="flex flex-row items-center justify-center mb-2 ">
-        <span
+        <p
           className={`${animation} hover:cursor-pointer`}
           onClick={() => setCollapsed(!collapsed)}
         >
           <FontAwesomeIcon icon={faCaretRight} />
-        </span>
+        </p>
         <h3 className="text-2xl text-center text-gray-700 font-semibold ml-4">
           {title}
         </h3>

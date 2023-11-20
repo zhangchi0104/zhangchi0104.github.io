@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 export type SectionName = "about-me" | "home" | "projects";
 interface AppState {
   fancyModeEnabled: boolean;
-
+  scrolled: boolean;
   activeSection: SectionName;
   locale: string;
 }
@@ -10,7 +10,8 @@ interface AppState {
 const initialState: AppState = {
   fancyModeEnabled: true,
   activeSection: "home",
-  locale: "en"
+  locale: "en",
+  scrolled: false
 };
 
 const rootSlice = createSlice({
@@ -28,6 +29,9 @@ const rootSlice = createSlice({
     },
     setActiveSectionName: (state, action: PayloadAction<SectionName>) => {
       state.activeSection = action.payload;
+    },
+    setScrolled: (state, action: PayloadAction<boolean>) => {
+      state.scrolled = action.payload;
     }
   }
 });
@@ -36,7 +40,8 @@ export const {
   enableFancyMode,
   disableFancyMode,
   toggleFancyMode,
-  setActiveSectionName
+  setActiveSectionName,
+  setScrolled
 } = rootSlice.actions;
 
 export default rootSlice.reducer;
