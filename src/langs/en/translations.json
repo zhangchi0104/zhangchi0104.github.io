@@ -89,7 +89,6 @@
             "Capable of token-based session management and Inter-Process communication for improved modularity",
             "Facilitates real-time user-to-user and channel chatting with WebSocket enhancing user experience"
           ],
-          "background": "/static/imgs/profile.png",
           "url": "https://github.com/UltiRTS/nest-plasmid"
         }
       ]

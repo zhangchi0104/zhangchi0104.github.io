@@ -6,7 +6,6 @@ const LanguageMemu: React.FC = () => {
   const [locale, setLocale] = useState(i18n.language);
   const setLanguage = (lang: string) => {
     const newLocale = lang === "aris" ? "aris_" + locale : lang;
-    console.log(newLocale);
     if (lang === locale) {
       return;
     }

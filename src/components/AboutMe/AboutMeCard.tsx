@@ -20,12 +20,10 @@ const AboutMeCardHeader: React.FC<AboutMeCardHeaderProps> = ({
   heading,
   subheading,
   expanded,
-  image,
   onClick
 }) => {
   return (
     <div className="flex flex-row justify-start items-start">
-      {image && typeof image === "string" ? <img src={image} /> : image}
       <p className="text-sm">
         <FontAwesomeIcon
           icon={faChevronRight}
@@ -52,8 +50,7 @@ const AboueMeCard: React.FC<AboutMeCardProps> = ({
   heading,
   subheading,
   children,
-  className,
-  image
+  className
 }) => {
   const [expanded, setExpanded] = useState(false);
 

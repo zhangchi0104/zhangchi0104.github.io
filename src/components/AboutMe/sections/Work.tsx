@@ -25,7 +25,7 @@ const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
       subheading={title}
     >
       <div className="mt-2">
-        {descriptions.map((item, i) => (
+        {descriptions.map((item) => (
           <p
             className="text-gray-700 text-sm mb-1 flex tracking-wide"
             key={`${title}-${company}-${item}`}

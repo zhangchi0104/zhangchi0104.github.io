@@ -1,7 +1,5 @@
-import React, { Children } from "react";
+import React from "react";
 import { useExtendStyle } from "@/hooks";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 type CardProps = React.PropsWithChildren<{
   className?: string;
 }>;

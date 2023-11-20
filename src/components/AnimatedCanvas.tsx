@@ -33,7 +33,6 @@ const AnimatedCavnas: React.FC = () => {
   });
 
   useAnimationFrame((time) => {
-    // console.log("animation fram e " + time);
     if (!canvasRef.current) {
       return;
     }

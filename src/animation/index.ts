@@ -38,14 +38,13 @@ class ParticleAnimation {
       meta?.height || window.innerHeight * window.devicePixelRatio;
     let canvasWidth =
       meta?.width || window.innerWidth * window.devicePixelRatio;
-    // console.log(canvasHeight, canvasWidth);
+
     const maxWidth = canvasWidth - ParticleAnimation.SPAWN_PADDING;
     const maxHeight = canvasHeight - ParticleAnimation.SPAWN_PADDING;
     const maxDeg = 360;
 
     const initX = random(ParticleAnimation.SPAWN_PADDING, maxWidth);
     const initY = random(ParticleAnimation.SPAWN_PADDING, maxHeight);
-    // console.log({ initX, initY });
     const initDeg = random(0, maxDeg);
 
     const velocityDirection = random(0, maxDeg);
