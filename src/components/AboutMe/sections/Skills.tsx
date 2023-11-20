@@ -9,7 +9,7 @@ const Skills: React.FC = () => {
   return (
     <Section title={t("aboutMe.skills.title")}>
       {skillsSection.map((props) => (
-        <SkillCard {...props} />
+        <SkillCard {...props} key={`${props.heading}`} />
       ))}
     </Section>
   );

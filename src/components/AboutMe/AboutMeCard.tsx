@@ -10,6 +10,7 @@ interface AboutMeCardSelfProps {
   heading: string | JSX.Element;
   subheading?: string | JSX.Element;
   className?: string;
+  image?: string | JSX.Element;
 }
 type AboutMeCardProps = React.PropsWithChildren<AboutMeCardSelfProps>;
 
@@ -21,10 +22,12 @@ const AboutMeCardHeader: React.FC<AboutMeCardHeaderProps> = ({
   heading,
   subheading,
   expanded,
+  image,
   onClick
 }) => {
   return (
     <div className="flex flex-row justify-start items-start">
+      {image && typeof image === "string" ? <img src={image} /> : image}
       <p className="text-sm">
         <FontAwesomeIcon
           icon={faChevronRight}
@@ -51,7 +54,8 @@ const AboueMeCard: React.FC<AboutMeCardProps> = ({
   heading,
   subheading,
   children,
-  className
+  className,
+  image
 }) => {
   const [expanded, setExpanded] = useState(false);
 

@@ -13,17 +13,20 @@ const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {
 
   return (
     <IntersectionDetector
+      ref={ref}
+      threshold={0.1}
       onEnter={() => dispatch(setActiveSectionName("about-me"))}
       onLeaveFromBottom={() => dispatch(setActiveSectionName("home"))}
-      ref={ref}
     >
-      <h2 className="text-3xl text-gray-700 text-center font-semibold mb-4">
-        {`<${t("navbar.aboutMe")} />`}
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-stretch">
-        <Work />
-        <Education />
-        <Skills />
+      <div ref={ref}>
+        <h2 className="text-3xl text-gray-700 text-center font-semibold mb-4">
+          {`<${t("navbar.aboutMe")} />`}
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-stretch">
+          <Work />
+          <Education />
+          <Skills />
+        </div>
       </div>
     </IntersectionDetector>
   );

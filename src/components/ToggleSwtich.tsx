@@ -1,47 +1,28 @@
-import { styled } from "@mui/material/styles";
-import Switch, { SwitchProps } from "@mui/material/Switch";
-const ToggleSwitch = styled(Switch)(({ theme }) => ({
-  width: 28,
-  height: 16,
-  padding: 0,
-  display: "flex",
-  "&:active": {
-    "& .MuiSwitch-thumb": {
-      width: 15
-    },
-    "& .MuiSwitch-switchBase.Mui-checked": {
-      transform: "translateX(9px)"
-    }
-  },
-  "& .MuiSwitch-switchBase": {
-    padding: 2,
-    "&.Mui-checked": {
-      transform: "translateX(12px)",
-      color: "#fff",
-      "& + .MuiSwitch-track": {
-        opacity: 1,
-        backgroundColor: theme.palette.mode === "dark" ? "#177ddc" : "#1890ff"
-      }
-    }
-  },
-  "& .MuiSwitch-thumb": {
-    boxShadow: "0 2px 4px 0 rgb(0 35 11 / 20%)",
-    width: 12,
-    height: 12,
-    borderRadius: 6,
-    transition: theme.transitions.create(["width"], {
-      duration: 200
-    })
-  },
-  "& .MuiSwitch-track": {
-    borderRadius: 16 / 2,
-    opacity: 1,
-    backgroundColor:
-      theme.palette.mode === "dark"
-        ? "rgba(255,255,255,.35)"
-        : "rgba(0,0,0,.25)",
-    boxSizing: "border-box"
-  }
-}));
+import React from "react";
+interface ToggleSwitchProps {
+  className?: string;
+  checked?: boolean;
+  onClick?: (ev: React.MouseEvent<HTMLDivElement>) => void;
+}
+
+const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
+  className = "",
+  checked: enabled = false,
+  onClick
+}) => {
+  const animation = enabled ? "translate-x-[200%]" : "";
+  const bg = enabled ? "bg-green-400" : "bg-gray-400";
+  return (
+    <div
+      className={`relative hover:cursor-pointer ${className}`}
+      onClick={onClick}
+    >
+      <div className={`transition rounded-full ${bg} duration-400 w-11 h-5`} />
+      <div
+        className={`rounded-full top-0 absolute transition ${animation} bg-white h-3 w-3 duration-300 m-1`}
+      />
+    </div>
+  );
+};
 
 export default ToggleSwitch;

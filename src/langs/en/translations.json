@@ -67,6 +67,32 @@
           ]
         }
       ]
+    },
+    "projects": {
+      "title": "Projects",
+      "items": [
+        {
+          "heading": "Iris: Multithreaded IRC",
+          "subheading": "Rust (Oct, 2022)",
+          "descriptions": [
+            "Allowing multiple clients to connect and talk to each other with multi-threading",
+            "Developed a plugin protocol to enrich the user experience",
+            "Conducted thorough testing with 95% code coverage"
+          ]
+        },
+        {
+          "heading": "UltiRTS/Nest-plasmid",
+          "subheading": "Open Source (Jan 2023 - Current)",
+          "descriptions": [
+            "Built a game lobby server with Nest.js and Typescript, allowing scaling with NestJS workers",
+            "Adopted multi-layer data storage with Redis and MySQL strategy for better performance",
+            "Capable of token-based session management and Inter-Process communication for improved modularity",
+            "Facilitates real-time user-to-user and channel chatting with WebSocket enhancing user experience"
+          ],
+          "background": "/static/imgs/profile.png",
+          "url": "https://github.com/UltiRTS/nest-plasmid"
+        }
+      ]
     }
   }
 }

@@ -67,7 +67,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
           <SkillBar
             name={name}
             level={level}
-            key={`${heading}-${name}`}
+            key={`${heading}-${name}-${level}`}
             className={i === 0 ? "" : "mt-4"}
           />
         ))}
