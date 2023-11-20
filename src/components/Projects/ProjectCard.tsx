@@ -85,7 +85,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 }) => {
   const [collapsed, setCollapsed] = useState(true);
   return (
-    <Card className={`w-full ${className}`}>
+    <Card className={`${className}`}>
       <ProjectCardHeader
         collapsed={collapsed}
         heading={heading}

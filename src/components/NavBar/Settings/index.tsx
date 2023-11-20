@@ -2,7 +2,6 @@ import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Dropdown from "../../Dropdown";
 import GearsIcon from "../../icons/GearIcon";
-import ToggleSwitch from "../../ToggleSwtich";
 import LanguageMemu from "./LanguageMenu";
 import FancyModeToggle from "./FancyModeToggle";
 
@@ -17,7 +16,7 @@ const Settings: React.FC = () => {
   const iconAnimation = "animate-spin-bounce duration-300";
   return (
     <>
-      <div onClick={toggleDropdown} ref={anchorRef}>
+      <div onClick={toggleDropdown} ref={anchorRef} className="relative">
         <GearsIcon
           className={`hover:cursor-pointer relative ${
             dropdownVisibility ? iconAnimation : ""

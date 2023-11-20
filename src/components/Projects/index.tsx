@@ -22,7 +22,7 @@ const Projects = React.forwardRef<HTMLDivElement>(({}, ref) => {
           {`<${t("aboutMe.projects.title")} />`}
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-start mx-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-start mx-4 mb-4">
         {items.map((props) => (
           <ProjectCard
             heading={props.heading}
@@ -30,7 +30,7 @@ const Projects = React.forwardRef<HTMLDivElement>(({}, ref) => {
             descriptions={props.descriptions}
             image={props.background}
             url={props.url}
-            className="mb-4"
+            className="mx-2"
             key={props.heading + props.descriptions.join("")}
           />
         ))}
