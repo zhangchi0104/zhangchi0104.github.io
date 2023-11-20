@@ -1,10 +1,13 @@
-import React from "react";
-import ProfilePhoto from "./ProfilePhoto";
+import React, { Suspense } from "react";
+const ProfilePhoto = React.lazy(
+  () => import(/* webpackChunkName: "profile-photo" */ "./ProfilePhoto")
+);
 import IntroText from "./IntroText";
 import SocialIconsBar from "./SocialIconsBar";
 import IntersectionDetector from "../IntersectionObserver";
 import { useAppDispatch } from "@/hooks";
 import { setScrolled } from "@/store/actions";
+import Loading from "../Loading";
 
 const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
@@ -18,8 +21,10 @@ const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
           <SocialIconsBar />
         </div>
       </div>
-      <div className="">
-        <ProfilePhoto />
+      <div>
+        <Suspense fallback={<Loading />}>
+          <ProfilePhoto />
+        </Suspense>
       </div>
     </div>
   );

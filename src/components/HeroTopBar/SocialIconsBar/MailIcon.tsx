@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Dialog from "../../Dialog";
 import FaIcon from "./FaIcon";

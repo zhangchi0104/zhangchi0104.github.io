@@ -1,10 +1,13 @@
 const path = require("path");
 const CopyFilePlugin = require("copy-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const BundleAnalyzerPlugin =
+  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+
 module.exports = {
   entry: "./src/index.tsx",
   output: {
-    filename: "[name].bundle.js",
+    filename: "[name].[chunkhash].bundle.js",
     path: path.resolve(__dirname, "dist"),
     clean: true
   },
@@ -15,7 +18,8 @@ module.exports = {
     }),
     new CopyFilePlugin({
       patterns: [{ from: "static", to: "static" }]
-    })
+    }),
+    new BundleAnalyzerPlugin()
   ],
   resolve: {
     // Add `.ts` and `.tsx` as a resolvable extension.

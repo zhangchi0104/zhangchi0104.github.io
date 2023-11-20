@@ -1,7 +1,8 @@
 import React, { useMemo, useState } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronRight, faLink } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
+import { faLink } from "@fortawesome/free-solid-svg-icons/faLink";
 import { useAppSelector } from "@/hooks";
 import { selectFancyModeEnabled } from "@/store/selectors";
 import Collapsable from "../Collapsable";

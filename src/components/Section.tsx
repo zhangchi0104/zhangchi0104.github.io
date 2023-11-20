@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Collapsable, { CollapsableHandle } from "./Collapsable";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
+import { faCaretRight } from "@fortawesome/free-solid-svg-icons/faCaretRight";
 import { UpdateContextProvider } from "@/hooks";
 
 type SectionProps = React.PropsWithChildren<{

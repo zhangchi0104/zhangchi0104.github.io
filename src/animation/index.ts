@@ -6,7 +6,7 @@ import {
   SquareParticle,
   TriangleParticle
 } from "./particles";
-import { random } from "lodash";
+import random from "lodash/random";
 interface CanvasMetadata {
   height: number;
   width: number;
