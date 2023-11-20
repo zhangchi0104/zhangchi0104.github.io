@@ -1,10 +1,8 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect, useState, useTransition } from "react";
+import React, { useState } from "react";
 import { Card } from "../Card";
 import Collapsable from "../Collapsable";
-import { useTriggerUpdate } from "@/hooks";
-import { flushSync } from "react-dom";
 
 interface AboutMeCardSelfProps {
   heading: string | JSX.Element;

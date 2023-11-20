@@ -34,28 +34,30 @@ const DesktopNavBar: React.FC<{
     <nav
       className={`${animation} fixed top-0 left-0 w-full py-2 pl-4 pr-4  ${shadow}`}
     >
-      <div className="flex max-w-screen-lg flex-row md:justify-end items-center">
-        <NavBarItem
-          className="mr-8 md:mr-12 lg:mr-20"
-          name="home"
-          onClick={onClick}
-        >
-          {t("navbar.home")}
-        </NavBarItem>
-        <NavBarItem
-          className="mr-8 md:mr-12 lg:mr-20"
-          name="about-me"
-          onClick={onClick}
-        >
-          {t("navbar.aboutMe")}
-        </NavBarItem>
-        <NavBarItem
-          className="mr-8 md:mr-12 lg:mr-20"
-          name="projects"
-          onClick={onClick}
-        >
-          {t("navbar.projects")}
-        </NavBarItem>
+      <div className="mx-auto max-w-screen-lg flex flex-row md:justify-end items-center">
+        <div className="flex flex-row">
+          <NavBarItem
+            className="mr-8 md:mr-12 lg:mr-20"
+            name="home"
+            onClick={onClick}
+          >
+            {t("navbar.home")}
+          </NavBarItem>
+          <NavBarItem
+            className="mr-8 md:mr-12 lg:mr-20"
+            name="about-me"
+            onClick={onClick}
+          >
+            {t("navbar.aboutMe")}
+          </NavBarItem>
+          <NavBarItem
+            className="mr-8 md:mr-12 lg:mr-20"
+            name="projects"
+            onClick={onClick}
+          >
+            {t("navbar.projects")}
+          </NavBarItem>
+        </div>
         <Settings />
       </div>
     </nav>
