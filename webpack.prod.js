@@ -5,7 +5,6 @@ const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const opts = {
   mode: "production",
-  plugins: [new BundleAnalyzerPlugin()],
   optimization: {
     minimize: true,
     minimizer: [
