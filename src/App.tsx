@@ -21,7 +21,10 @@ const App: React.FC = () => {
       }
       case "about-me": {
         if (aboutMeRef.current) {
-          aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
+          aboutMeRef.current.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest"
+          });
         }
         break;
       }
