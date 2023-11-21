@@ -13,7 +13,7 @@ interface AboutMeCardSelfProps {
 type AboutMeCardProps = React.PropsWithChildren<AboutMeCardSelfProps>;
 
 type AboutMeCardHeaderProps = React.PropsWithChildren<
-  AboutMeCardSelfProps & { expanded: boolean; onClick: () => void }
+  AboutMeCardSelfProps & { expanded: boolean; onClick?: () => void }
 >;
 
 const AboutMeCardHeader: React.FC<AboutMeCardHeaderProps> = ({
@@ -55,14 +55,16 @@ const AboueMeCard: React.FC<AboutMeCardProps> = ({
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <Card className={`px-8 py-6 ${className ?? ""}`}>
+    <Card
+      className={`px-8 py-6 hover:cursor-pointer ${className ?? ""}`}
+      onClick={() => {
+        setExpanded(!expanded);
+      }}
+    >
       <AboutMeCardHeader
         heading={heading}
         subheading={subheading}
         expanded={expanded}
-        onClick={() => {
-          setExpanded(!expanded);
-        }}
       />
       <Collapsable observable collapsed={!expanded}>
         {children}

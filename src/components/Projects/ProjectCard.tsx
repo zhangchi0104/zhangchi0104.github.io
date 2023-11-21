@@ -14,11 +14,11 @@ interface ProjectCardProps {
   descriptions?: string[];
   image?: string;
   url?: string;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 type ProjectCarHeaderProps = Omit<ProjectCardProps, "descriptions"> & {
   collapsed: boolean;
-  onClick?: () => void;
 };
 
 const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
@@ -35,7 +35,10 @@ const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
     [fancyModeEnabled]
   );
   return (
-    <div className="bg-white  transition-[rotate] rounded-lg overflow-hidden">
+    <div
+      className="bg-white hover:cursor-pointer transition-[rotate] rounded-lg overflow-hidden"
+      onClick={onClick}
+    >
       {/** div for header image */}
       <div>
         {image && typeof image === "string" ? (
@@ -55,7 +58,6 @@ const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
                 className={`transition ease-in-out text-xs text-gray-700 ${
                   !collapsed ? "rotate-90" : ""
                 } mr-6 hover:cursor-pointer`}
-                onClick={onClick}
               />
             </div>
             <div className="flex flex-col">
