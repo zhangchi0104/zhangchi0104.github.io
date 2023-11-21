@@ -90,6 +90,27 @@
             "Facilitates real-time user-to-user and channel chatting with WebSocket enhancing user experience"
           ],
           "url": "https://github.com/UltiRTS/nest-plasmid"
+        },
+        {
+          "heading": "Medical Chatbot",
+          "subheading": "Capstone Project (React + Flask)",
+          "descriptions": [
+            "Built an intuitive web interface using React and Redux",
+            "Constructed a RESTful server with Flask and MongoDB",
+            "Incorporated Google Dialogflow API for accurately analysing users' intentions",
+            "Conducted weekly meetings to ensure task tracking on JIRA"
+          ]
+        },
+        {
+          "heading": "MaaAssistantArknights/MaaAssistantArknights",
+          "subheading": "Open Source",
+          "url": "https://github.com/MaaAssistantArknights/MaaAssistantArknights",
+          "descriptions": [
+            "Engineered a Dart binding for the C++ library, empowering  cross-platform UI with Flutter",
+            "Conducted unit testing for the API binding, ensuring its functional correctness",
+            "Created issues and pull requests on GitHub to enhance communication with the development team",
+            "Documented the API using Dart standard to enhance readability and simplify maintenance "
+          ]
         }
       ]
     }
