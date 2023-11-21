@@ -14,7 +14,7 @@ const Section: React.FC<SectionProps> = ({ className, children, title }) => {
   const ref = useRef<CollapsableHandle>(null);
   const animation = `transition ${collapsed ? "" : "rotate-90"}`;
   return (
-    <div className={`mx-4 mb-4 ${className ?? ""}`}>
+    <div className={`mb-4 ${className ?? ""}`}>
       <div className="flex flex-row items-center justify-center mb-2 ">
         <p
           className={`${animation} hover:cursor-pointer`}

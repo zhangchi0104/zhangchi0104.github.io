@@ -25,22 +25,17 @@ const Projects = React.forwardRef<HTMLDivElement>(({}, ref) => {
           {`<${t("aboutMe.projects.title")} />`}
         </h2>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-start mx-4 mb-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 place-items-start mb-4">
         {items.map((props) => (
-          <Suspense
-            key={props.heading + props.descriptions.join("") + "outer"}
-            fallback={<Loading />}
-          >
-            <ProjectCard
-              heading={props.heading}
-              subheading={props.subheading}
-              descriptions={props.descriptions}
-              // image={props.background}
-              url={props.url}
-              className="mx-2"
-              key={props.heading + props.descriptions.join("")}
-            />
-          </Suspense>
+          <ProjectCard
+            heading={props.heading}
+            subheading={props.subheading}
+            descriptions={props.descriptions}
+            // image={props.background}
+            url={props.url}
+            className="w-full"
+            key={props.heading + props.descriptions.join("")}
+          />
         ))}
       </div>
     </IntersectionDetector>

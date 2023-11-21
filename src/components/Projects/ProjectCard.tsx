@@ -60,8 +60,8 @@ const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
                 } mr-6 hover:cursor-pointer`}
               />
             </div>
-            <div className="flex flex-col">
-              <div>{heading}</div>
+            <div className=" w-full">
+              <h2 className="overflow-auto break-all">{heading}</h2>
               <div className="text-gray-500 ">{subheading}</div>
             </div>
           </div>

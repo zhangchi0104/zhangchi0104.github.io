@@ -39,6 +39,52 @@
     },
     "workExperience": {
       "title": "工作经历"
+    },
+    "projects": {
+      "title": "项目经历",
+      "items": [
+        {
+          "heading": "Iris：多线程 IRC",
+          "subheading": "Rust（2022 年 10 月）",
+          "descriptions": [
+            "允许多个客户端通过多线程连接和互相交流",
+            "开发了一个插件协议以丰富用户体验",
+            "进行了 95% 代码覆盖率的全面测试"
+          ]
+        },
+        {
+          "heading": "UltiRTS/Nest-plasmid",
+          "subheading": "开源项目（2023 年 1 月 - 至今）",
+          "descriptions": [
+            "使用 Nest.js 和 Typescript 构建了游戏大厅服务器，允许使用 NestJS 工作程序进行扩展",
+            "采用了 Redis 和 MySQL 策略的多层数据存储以提高性能",
+            "具备基于令牌的会话管理和进程间通信，以提高模块化性能",
+            "通过 WebSocket 实现实时用户之间和频道之间的聊天，提升用户体验"
+          ],
+          "url": "https://github.com/UltiRTS/nest-plasmid"
+        },
+        {
+          "heading": "医疗聊天机器人",
+          "subheading": "毕业设计项目（React + Flask）",
+          "descriptions": [
+            "使用 React 和 Redux 构建了直观的 Web 界面",
+            "使用 Flask 和 MongoDB 构建了 RESTful 服务器",
+            "整合了 Google Dialogflow API 以准确分析用户意图",
+            "进行每周会议以确保在 JIRA 上跟踪任务"
+          ]
+        },
+        {
+          "heading": "MaaAssistantArknights/MaaAssistantArknights",
+          "subheading": "开源项目",
+          "url": "https://github.com/MaaAssistantArknights/MaaAssistantArknights",
+          "descriptions": [
+            "为 C++ 库设计了 Dart 绑定，使用 Flutter 实现了跨平台用户界面",
+            "对 API 绑定进行了单元测试，确保其功能正确性",
+            "在 GitHub 上创建了问题和拉取请求，以增进与开发团队的沟通",
+            "使用 Dart 标准文档化了 API，以增强可读性并简化维护"
+          ]
+        }
+      ]
     }
   }
 }

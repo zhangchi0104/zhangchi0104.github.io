@@ -6,7 +6,7 @@
     "name": "天童 爱丽丝"
   },
   "home": {
-    "heading": "👋🏻邦吧咔邦",
+    "heading": "👋🏻邦吧咔邦，是爱丽丝哟",
     "subheading1": "千年科技学园",
     "subheading2": "光属性DPS",
     "mail": {
@@ -42,7 +42,7 @@
         },
         {
           "heading": "家政清洁",
-          "subheading": "\"爱丽丝不是扫地机器人\"",
+          "subheading": "\"爱丽丝不是扫地机器人！\"",
           "skillset": {
             "可爱": 5,
             "打扫": 5
@@ -76,8 +76,8 @@
       "title": "项目经验",
       "items": [
         {
-          "heading": "Tales Saga Chronicles 2",
-          "descriptions": ["Won the Millennium Prize"]
+          "heading": "最终女神之剑传说 2",
+          "descriptions": ["荣获千年学院大奖"]
         }
       ]
     }
