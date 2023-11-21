@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 const ProfilePhoto = React.lazy(
   () => import(/* webpackChunkName: "profile-photo" */ "./ProfilePhoto")
 );
@@ -38,15 +38,18 @@ const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
 
 const HeroTopBar = React.forwardRef<HTMLDivElement>((_, ref) => {
   const dispatch = useAppDispatch();
+  useEffect(() => {
+    const callback = () => {
+      const scrolled = window.scrollY > 0;
+      dispatch(setScrolled(scrolled));
+    };
+    window.addEventListener("scroll", callback);
+    return () => window.removeEventListener("scroll", callback);
+  }, []);
   return (
-    <IntersectionDetector
-      ref={ref}
-      threshold={0.98}
-      onEnter={() => dispatch(setScrolled(false))}
-      onLeave={() => dispatch(setScrolled(true))}
-    >
+    <div ref={ref}>
       <HeroTopBarContent />
-    </IntersectionDetector>
+    </div>
   );
 });
 
