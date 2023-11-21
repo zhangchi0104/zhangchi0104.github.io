@@ -5,6 +5,7 @@ const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const opts = {
   mode: "production",
+
   optimization: {
     minimize: true,
     minimizer: [
@@ -19,7 +20,7 @@ const opts = {
     splitChunks: {
       chunks: "all",
       minSize: 10000,
-      maxSize: 250000
+      maxSize: 500000
     }
   }
 };
