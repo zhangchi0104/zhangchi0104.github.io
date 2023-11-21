@@ -8,7 +8,7 @@ const IntroText = React.lazy(
 const SocialIconsBar = React.lazy(
   () => import(/* webpackChunkName: "social-icons" */ "./SocialIconsBar")
 );
-import IntersectionDetector from "../IntersectionObserver";
+
 import { useAppDispatch } from "@/hooks";
 import { setScrolled } from "@/store/actions";
 import Loading from "../Loading";
