@@ -35,10 +35,37 @@
       ]
     },
     "skills": {
-      "title": "技能特长"
+      "title": "技能特长",
+      "items": [
+        {
+          "heading": "前端",
+          "subheading": "熟悉 HTML、CSS、JS；使用 React、Tailwind",
+          "skillset": {
+            "HTML": 4,
+            "CSS": 4,
+            "JavaScript": 4,
+            "TypeScript": 3,
+            "React": 3,
+            "Vue2": 2,
+            "Redux": 3
+          }
+        }
+      ]
     },
     "workExperience": {
-      "title": "工作经历"
+      "title": "工作经历",
+      "items": [
+        {
+          "title": "前端开发者",
+          "company": "无锡国家超级计算中心",
+          "descriptions": [
+            "使用 Vue.js 实现了一个全面的仪表板，用于可视化作业状态",
+            "使用 echarts 创建了详细的作业统计可视化",
+            "开发了一个 API 网关，促进了 Web 界面与后端服务之间的通信",
+            "重构和优化现有代码以提高用户界面性能"
+          ]
+        }
+      ]
     },
     "projects": {
       "title": "项目经历",

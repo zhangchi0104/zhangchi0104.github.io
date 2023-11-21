@@ -21,9 +21,11 @@ const LanguageMemu: React.FC = () => {
     }
   };
   return (
-    <ul className="text-gray-900 text-sm px-4">
+    <ul className="text-gray-900 text-sm ">
       <li
-        className={`${locale === "zh" ? "font-bold text-sky-900" : ""}`}
+        className={`${
+          locale === "zh" ? "font-bold text-sky-900" : ""
+        } hover:cursor-pointer hover:bg-gray-100 px-4 py-2`}
         data-value={"zh"}
         onClick={() => onLangListClick("zh")}
       >
@@ -35,7 +37,7 @@ const LanguageMemu: React.FC = () => {
           locale.startsWith("en-") || locale === "en"
             ? "font-bold text-sky-900"
             : ""
-        } mt-3`}
+        } hover:cursor-pointer hover:bg-gray-100 px-4 py-2`}
         onClick={() => onLangListClick("en")}
       >
         English
@@ -44,7 +46,7 @@ const LanguageMemu: React.FC = () => {
         data-value="arisu"
         className={`${
           locale.includes("aris") ? "font-bold text-sky-900" : ""
-        } mt-3`}
+        } hover:cursor-pointer hover:bg-gray-100 px-4 py-2`}
         onClick={() => onLangListClick("aris")}
       >
         {locale.includes("zh") ? "邦邦咔邦" : "Ban-Ban-Ka-Ban"}

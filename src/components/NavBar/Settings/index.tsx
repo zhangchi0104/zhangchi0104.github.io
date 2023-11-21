@@ -26,15 +26,14 @@ const Settings: React.FC = () => {
         <Dropdown
           anchor={anchorRef.current}
           visible={dropdownVisibility}
-          className="w-52 right-0 py-4 mr-1"
+          className="w-52 right-0 py-2 mr-1 mt-2"
         >
           <div className="text-gray-900 text-sm">
             <LanguageMemu />
-            <hr className="mt-3" />
-            <div className=" px-4">
+            <hr className="my-2" />
+            <div>
               <FancyModeToggle />
             </div>
-            <hr className="mt-3" />
           </div>
         </Dropdown>
       )}
