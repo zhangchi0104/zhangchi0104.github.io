@@ -47,7 +47,7 @@ const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
       {/** div for Text */}
       <div className="px-6 py-4 font-bold text-sm tracking-wide text-gray-700">
         <div className="flex flex-row items-center justify-between">
-          <div className="flex items-center justify-start">
+          <div className="flex items-start justify-start">
             <div className="text-sm">
               <FontAwesomeIcon
                 icon={faChevronRight}

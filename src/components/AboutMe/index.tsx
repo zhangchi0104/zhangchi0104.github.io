@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Suspense } from "react";
 import IntersectionDetector from "../IntersectionObserver";
 import { useAppDispatch } from "@/hooks";
 import { setActiveSectionName } from "@/store/actions";
-import Education from "./sections/Education";
-import Skills from "./sections/Skills";
-import Work from "./sections/Work";
+const Education = React.lazy(() => import("./sections/Education"));
+const Work = React.lazy(() => import("./sections/Work"));
+const Skills = React.lazy(() => import("./sections/Skills"));
+
 import { useTranslation } from "react-i18next";
 
 const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {
@@ -22,10 +23,16 @@ const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {
         <h2 className="text-3xl text-gray-700 text-center font-semibold mb-4">
           {`<${t("navbar.aboutMe")} />`}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-stretch">
-          <Work />
-          <Education />
-          <Skills />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-stretch gap-4">
+          <Suspense fallback={<div className="hidden" />}>
+            <Work />
+          </Suspense>
+          <Suspense fallback={<div className="hidden" />}>
+            <Education />
+          </Suspense>
+          <Suspense fallback={<div className="hidden" />}>
+            <Skills />
+          </Suspense>
         </div>
       </div>
     </IntersectionDetector>
