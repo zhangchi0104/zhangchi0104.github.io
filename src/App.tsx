@@ -1,5 +1,5 @@
 import React, { Suspense, useRef } from "react";
-import HeroTopBar from "./components/HeroTopBar";
+import Home from "./components/Home";
 const AnimatedCavnas = React.lazy(() => import("./components/AnimatedCanvas"));
 import NavBar from "./components/NavBar";
 import AboutMe from "./components/AboutMe";
@@ -43,7 +43,7 @@ const App: React.FC = () => {
         <AnimatedCavnas />
       </Suspense>
       <div className="max-w-screen-lg mx-auto">
-        <HeroTopBar ref={homeRef} />
+        <Home ref={homeRef} />
         <AboutMe ref={aboutMeRef} />
         <Projects ref={projectsRef}></Projects>
         <NavBar onClick={onNavBarClick}></NavBar>

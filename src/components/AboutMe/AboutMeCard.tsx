@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Card } from "../Card";
 import Collapsable from "../Collapsable";
+import { init } from "i18next";
 
 interface AboutMeCardSelfProps {
   heading: string | JSX.Element;
   subheading?: string | JSX.Element;
   className?: string;
   image?: string | JSX.Element;
+  initExpanded?: boolean;
 }
 type AboutMeCardProps = React.PropsWithChildren<AboutMeCardSelfProps>;
 
@@ -50,9 +52,10 @@ const AboueMeCard: React.FC<AboutMeCardProps> = ({
   heading,
   subheading,
   children,
-  className
+  className,
+  initExpanded = false
 }) => {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(initExpanded);
 
   return (
     <Card
