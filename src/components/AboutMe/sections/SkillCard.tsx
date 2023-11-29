@@ -61,6 +61,7 @@ const SkillCard: React.FC<SkillCardProps> = ({
       heading={heading}
       subheading={subheading}
       className={`mb-4 ${className ?? ""}`}
+      initExpanded={true}
     >
       <div className="mt-2 mb-2">
         {Object.entries(skillset).map(([name, level], i) => (

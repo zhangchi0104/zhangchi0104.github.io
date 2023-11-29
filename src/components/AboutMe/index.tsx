@@ -23,7 +23,7 @@ const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {
         <h2 className="text-3xl text-gray-700 text-center font-semibold mb-4">
           {`<${t("navbar.aboutMe")} />`}
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-stretch gap-4">
+        <div className="grid grid-cols-1 mx-4 md:mx-0 md:grid-cols-2 lg:grid-cols-3 place-items-stretch gap-4">
           <Suspense fallback={<div className="hidden" />}>
             <Work />
           </Suspense>

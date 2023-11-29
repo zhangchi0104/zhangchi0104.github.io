@@ -13,7 +13,7 @@ import { useAppDispatch } from "@/hooks";
 import { setScrolled } from "@/store/actions";
 import Loading from "../Loading";
 
-const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
+const HomeContent = React.forwardRef<HTMLDivElement>((_, ref) => {
   return (
     <div
       className="mx-4 flex flex-col-reverse md:grid md:grid-cols-3 md:gap-4 h-screen items-center p-4 justify-center"
@@ -36,7 +36,7 @@ const HeroTopBarContent = React.forwardRef<HTMLDivElement>((_, ref) => {
   );
 });
 
-const HeroTopBar = React.forwardRef<HTMLDivElement>((_, ref) => {
+const Home = React.forwardRef<HTMLDivElement>((_, ref) => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     const callback = () => {
@@ -48,9 +48,9 @@ const HeroTopBar = React.forwardRef<HTMLDivElement>((_, ref) => {
   }, []);
   return (
     <div ref={ref}>
-      <HeroTopBarContent />
+      <HomeContent />
     </div>
   );
 });
 
-export default HeroTopBar;
+export default Home;

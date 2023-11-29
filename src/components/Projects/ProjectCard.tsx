@@ -66,7 +66,7 @@ const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
             </div>
           </div>
           {url && (
-            <a href={url} className={`text-gray-500  ${linkTransition}`}>
+            <a href={url} className={`text-gray-500  ${linkTransition} ml-2`}>
               <FontAwesomeIcon icon={faLink} />
             </a>
           )}
