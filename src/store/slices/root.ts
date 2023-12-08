@@ -4,14 +4,14 @@ interface AppState {
   fancyModeEnabled: boolean;
   scrolled: boolean;
   activeSection: SectionName;
-  locale: string;
+  appearance: "light" | "dark" | "system";
 }
 
 const initialState: AppState = {
   fancyModeEnabled: true,
   activeSection: "home",
-  locale: "en",
-  scrolled: false
+  scrolled: false,
+  appearance: "system"
 };
 
 const rootSlice = createSlice({
@@ -32,6 +32,12 @@ const rootSlice = createSlice({
     },
     setScrolled: (state, action: PayloadAction<boolean>) => {
       state.scrolled = action.payload;
+    },
+    setAppearance: (
+      state,
+      action: PayloadAction<"light" | "dark" | "system">
+    ) => {
+      state.appearance = action.payload;
     }
   }
 });
@@ -41,7 +47,8 @@ export const {
   disableFancyMode,
   toggleFancyMode,
   setActiveSectionName,
-  setScrolled
+  setScrolled,
+  setAppearance
 } = rootSlice.actions;
 
 export default rootSlice.reducer;

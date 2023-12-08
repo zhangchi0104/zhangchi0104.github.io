@@ -37,13 +37,13 @@ const SkillBar: React.FC<SkillBarProps> = ({ name, level, className }) => {
   const levelNumber = `${20 * level}%`;
   return (
     <div className={className}>
-      <div className="flex justify-between text-sm font-bold text-gray-700 tracking-wide mx-1">
+      <div className="flex justify-between text-sm font-bold text-gray-700 dark:text-slate-300 tracking-wide mx-1">
         <span>{name}</span>
-        <span className="text-gray-500">{levelNumber}</span>
+        <span className="text-gray-600 dark:text-slate-400">{levelNumber}</span>
       </div>
-      <div className="rounded-xl bg-gray-200 w-full h-2 mt-2 relative overflow-hidden">
+      <div className="rounded-xl bg-gray-200 dark:bg-slate-400 w-full h-2 mt-2 relative overflow-hidden">
         <div
-          className={`bg-amber-500 ${w} absolute h-2 fill-mode-forwards rounded-xl origin-left ${animation}`}
+          className={`bg-amber-500 dark:bg-amber-700 ${w} absolute h-2 fill-mode-forwards rounded-xl origin-left ${animation}`}
         ></div>
       </div>
     </div>

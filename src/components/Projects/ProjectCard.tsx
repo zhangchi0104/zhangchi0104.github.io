@@ -36,7 +36,7 @@ const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
   );
   return (
     <div
-      className="bg-white hover:cursor-pointer transition-[rotate] rounded-lg overflow-hidden"
+      className="bg-white dark:bg-slate-600 hover:cursor-pointer transition-[rotate] rounded-lg overflow-hidden"
       onClick={onClick}
     >
       {/** div for header image */}
@@ -48,25 +48,30 @@ const ProjectCardHeader: React.FC<ProjectCarHeaderProps> = ({
         )}
       </div>
       {/** div for Text */}
-      <div className="px-6 py-4 font-bold text-sm tracking-wide text-gray-700">
+      <div className="px-6 py-4 font-bold text-sm tracking-wide text-gray-700 dark:text-slate-200">
         <div className="flex flex-row items-center justify-between">
           <div className="flex items-start justify-start">
             <div className="text-sm">
               <FontAwesomeIcon
                 icon={faChevronRight}
                 size="xs"
-                className={`transition ease-in-out text-xs text-gray-700 ${
+                className={`transition ease-in-out text-xs text-gray-700 dark:text-slate-400 ${
                   !collapsed ? "rotate-90" : ""
                 } mr-6 hover:cursor-pointer`}
               />
             </div>
             <div className=" w-full">
               <h2 className="overflow-auto break-all">{heading}</h2>
-              <div className="text-gray-500 ">{subheading}</div>
+              <div className="text-gray-500 dark:text-slate-400 ">
+                {subheading}
+              </div>
             </div>
           </div>
           {url && (
-            <a href={url} className={`text-gray-500  ${linkTransition} ml-2`}>
+            <a
+              href={url}
+              className={`text-gray-500 dark:text-slate-400 ${linkTransition} ml-2`}
+            >
               <FontAwesomeIcon icon={faLink} />
             </a>
           )}
@@ -99,7 +104,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <div className="px-6 pb-4">
           {descriptions?.map((description) => (
             <p
-              className="flex text-gray-700 text-sm mt-1"
+              className="flex text-gray-700 dark:text-slate-200 text-sm mt-1"
               key={`${heading}-${description}`}
             >
               <span className="mr-4">-</span>

@@ -1,5 +1,6 @@
 module.exports = {
   content: ["./src/**/*.{html,tsx,ts}"],
+  darkMode: "class",
   theme: {
     extend: {
       animation: {

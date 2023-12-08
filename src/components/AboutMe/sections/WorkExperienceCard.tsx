@@ -24,7 +24,7 @@ export const WorkExperienceCard: React.FC<WorkExperienceCardProps> = ({
       <div className="mt-2">
         {descriptions.map((item) => (
           <p
-            className="text-gray-700 text-sm mb-1 flex tracking-wide"
+            className="text-gray-700 dark:text-slate-300 text-sm mb-1 flex tracking-wide"
             key={`${title}-${company}-${item}`}
           >
             <span className="mr-4">-</span>

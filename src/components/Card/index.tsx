@@ -17,7 +17,10 @@ export const CardBody: React.FC<CardProps> = ({ children, className }) => {
 export const Card: React.FC<CardProps> = ({ children, className, onClick }) => {
   const rootCss = useExtendStyle("shadow-lg rounded-lg bg-white");
   return (
-    <div className={rootCss`${className ?? ""}`} onClick={onClick}>
+    <div
+      className={rootCss`${className ?? ""} bg-white dark:bg-slate-600`}
+      onClick={onClick}
+    >
       {children}
     </div>
   );

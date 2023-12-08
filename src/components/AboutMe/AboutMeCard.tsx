@@ -31,16 +31,16 @@ const AboutMeCardHeader: React.FC<AboutMeCardHeaderProps> = ({
           icon={faChevronRight}
           onClick={onClick}
           size="xs"
-          className={`transition ease-in-out text-xs text-gray-700 ${
+          className={`transition ease-in-out text-xs text-gray-700 dark:text-slate-300 ${
             expanded ? "rotate-90" : ""
           } mr-6 hover:cursor-pointer`}
         />
       </p>
       <div className="flex flex-col">
-        <div className="text-sm font-bold text-gray-700 tracking-wide">
+        <div className="text-sm font-bold text-gray-700 dark:text-slate-300 tracking-wide">
           {heading}
         </div>
-        <div className="text-sm font-bold text-gray-500 tracking-wide">
+        <div className="text-sm font-bold text-gray-500 dark:text-slate-400 tracking-wide">
           {subheading}
         </div>
       </div>

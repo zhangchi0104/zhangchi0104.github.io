@@ -28,11 +28,11 @@ const DesktopNavBar: React.FC<{
   showShadow: boolean;
 }> = ({ onClick, showShadow = false }) => {
   const { t } = useTranslation();
-  const shadow = showShadow ? "shadow-md bg-amber-50" : "shadow-none";
+  const shadow = showShadow ? "shadow-md" : "shadow-none";
 
   return (
     <nav
-      className={`${animation} fixed top-0 left-0 w-full py-2 pl-4 pr-4  ${shadow}`}
+      className={`${animation} fixed top-0 left-0 w-full py-2 pl-4 pr-4 bg-amber-50 dark:bg-slate-900  ${shadow}`}
     >
       <div className="mx-auto max-w-screen-lg flex flex-row md:justify-end items-center">
         <div className="flex flex-row">

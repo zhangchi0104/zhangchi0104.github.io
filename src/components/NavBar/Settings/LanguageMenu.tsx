@@ -21,11 +21,11 @@ const LanguageMemu: React.FC = () => {
     }
   };
   return (
-    <ul className="text-gray-900 text-sm ">
+    <ul>
       <li
         className={`${
-          locale === "zh" ? "font-bold text-sky-900" : ""
-        } hover:cursor-pointer hover:bg-gray-100 px-4 py-2`}
+          locale === "zh" ? "font-bold text-sky-900 dark:text-slate-300" : ""
+        } hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 px-4 py-2`}
         data-value={"zh"}
         onClick={() => onLangListClick("zh")}
       >
@@ -35,9 +35,9 @@ const LanguageMemu: React.FC = () => {
         data-value="en"
         className={`${
           locale.startsWith("en-") || locale === "en"
-            ? "font-bold text-sky-900"
+            ? "font-bold text-sky-900 dark:text-slate-200"
             : ""
-        } hover:cursor-pointer hover:bg-gray-100 px-4 py-2`}
+        } hover:cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 px-4 py-2`}
         onClick={() => onLangListClick("en")}
       >
         English
@@ -45,8 +45,10 @@ const LanguageMemu: React.FC = () => {
       <li
         data-value="arisu"
         className={`${
-          locale.includes("aris") ? "font-bold text-sky-900" : ""
-        } hover:cursor-pointer hover:bg-gray-100 px-4 py-2`}
+          locale.includes("aris")
+            ? "font-bold text-sky-900 dark:text-slate-200"
+            : ""
+        } hover:cursor-pointer dark:hover:bg-gray-600 hover:bg-gray-100 px-4 py-2`}
         onClick={() => onLangListClick("aris")}
       >
         {locale.includes("zh") ? "邦邦咔邦" : "Ban-Ban-Ka-Ban"}

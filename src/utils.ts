@@ -85,7 +85,7 @@ export type FieldType<
   ? T[P]
   : never;
 
-export type MutuallyExclude<T, E extends keyof T> =
+export type MutuallyExclude<T, E extends keyof T = keyof T> =
   | {
       [K in E]: { [P in K]: T[P] } & Omit<T, E> & {
           [P in Exclude<E, K>]?: never;
