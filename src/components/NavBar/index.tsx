@@ -16,7 +16,7 @@ const MobileNavBar: React.FC<{ showShadow: boolean }> = ({ showShadow }) => {
     <div
       className={`${animation} flex justify-between w-screen py-2 px-4 fixed items-center bg-amber-50 dark:bg-slate-900 top-0 ${shawdow}`}
     >
-      <div className="text-2xl font-semibold text-gray-700 text-center">
+      <div className="text-2xl font-semibold text-gray-700 dark:text-slate-300 text-center">
         {t("navbar.name")}
       </div>
       <Settings />
