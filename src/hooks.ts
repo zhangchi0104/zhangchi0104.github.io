@@ -1,13 +1,8 @@
 import { TypedUseSelectorHook, useDispatch } from "react-redux";
 import { AppDispatch, RootState } from "./store";
 import { useSelector } from "react-redux";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState
-} from "react";
+import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { selectAppearance } from "./store/selectors";
 
 export const useAppDispatch: () => AppDispatch = useDispatch;
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
@@ -56,6 +51,15 @@ export const useAnimationFrame = (callback: (time: number) => void) => {
       }
     };
   }, []);
+};
+
+export const useDarkMode = () => {
+  const systemDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  const selectedAppearance = useAppSelector(selectAppearance);
+  if (selectedAppearance === "system") {
+    return systemDarkMode;
+  }
+  return selectedAppearance === "dark";
 };
 
 const UpdateContext = createContext<((deltaHeight: number) => void) | null>(

@@ -11,7 +11,7 @@ const ToggleSwitch: React.FC<ToggleSwitchProps> = ({
   onClick
 }) => {
   const animation = enabled ? "translate-x-[200%]" : "";
-  const bg = enabled ? "bg-green-400" : "bg-gray-400";
+  const bg = enabled ? "bg-green-400 " : "bg-gray-400";
   return (
     <div
       className={`relative hover:cursor-pointer ${className}`}

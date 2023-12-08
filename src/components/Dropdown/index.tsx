@@ -16,7 +16,9 @@ const Dropdown: React.FC<DropdownProps> = ({
   visible,
   children
 }) => {
-  const style = useExtendStyle("bg-white rounded-xl shadow-md absolute");
+  const style = useExtendStyle(
+    "bg-white rounded-xl shadow-md absolute dark:bg-gray-700"
+  );
   return (
     anchor &&
     visible &&

@@ -3,5 +3,6 @@ export {
   disableFancyMode,
   toggleFancyMode,
   setActiveSectionName,
-  setScrolled
+  setScrolled,
+  setAppearance
 } from "./slices/root";

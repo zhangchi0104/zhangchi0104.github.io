@@ -14,7 +14,9 @@ const Section: React.FC<SectionProps> = ({ className, children, title }) => {
   const ref = useRef<CollapsableHandle>(null);
   const animation = `transition ${collapsed ? "" : "rotate-90"}`;
   return (
-    <div className={`mb-4 ${className ?? ""}`}>
+    <div
+      className={`mb-4 ${className ?? ""} text-gray-700 dark:text-slate-300`}
+    >
       <div className="flex flex-row items-center justify-center mb-2 ">
         <p
           className={`${animation} hover:cursor-pointer`}
@@ -22,9 +24,7 @@ const Section: React.FC<SectionProps> = ({ className, children, title }) => {
         >
           <FontAwesomeIcon icon={faCaretRight} />
         </p>
-        <h3 className="text-2xl text-center text-gray-700 font-semibold ml-4">
-          {title}
-        </h3>
+        <h3 className="text-2xl text-center  font-semibold ml-4">{title}</h3>
       </div>
       <UpdateContextProvider
         value={(deltaHeight) => {

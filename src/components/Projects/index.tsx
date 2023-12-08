@@ -21,7 +21,7 @@ const Projects = React.forwardRef<HTMLDivElement>(({}, ref) => {
       threshold={0.1}
     >
       <div>
-        <h2 className="text-3xl text-gray-700 text-center font-semibold mb-4">
+        <h2 className="text-3xl text-gray-700 dark:text-slate-300 text-center font-semibold mb-4">
           {`<${t("aboutMe.projects.title")} />`}
         </h2>
       </div>

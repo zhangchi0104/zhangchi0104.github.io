@@ -20,7 +20,7 @@ const AboutMe = React.forwardRef<HTMLDivElement>((_, ref) => {
       onLeaveFromBottom={() => dispatch(setActiveSectionName("home"))}
     >
       <div ref={ref}>
-        <h2 className="text-3xl text-gray-700 text-center font-semibold mb-4">
+        <h2 className="text-3xl text-gray-700 dark:text-slate-300 text-center font-semibold mb-4">
           {`<${t("navbar.aboutMe")} />`}
         </h2>
         <div className="grid grid-cols-1 mx-4 md:mx-0 md:grid-cols-2 lg:grid-cols-3 place-items-stretch gap-4">

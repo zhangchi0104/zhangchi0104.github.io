@@ -28,12 +28,20 @@ const UniversityCard: React.FC<UniversityCardProps> = ({
         />
       )}
       <CardBody className="text-center relative">
-        <p className={font`text-gray-700 mb-1 font-bold text-sm`}>
+        <p
+          className={font`text-gray-700 dark:text-slate-300 mb-1 font-bold text-sm`}
+        >
           {university}
         </p>
-        <p className={font`text-gray-500 font-bold text-xs`}>{degree}</p>
+        <p
+          className={font`text-gray-500 dark:text-slate-400 font-bold text-xs`}
+        >
+          {degree}
+        </p>
         {duration && (
-          <p className={font`text-gray-600 tracking-wide mt-1 text-xs`}>
+          <p
+            className={font`text-gray-600 dark:text-slate-400 tracking-wide mt-1 text-xs`}
+          >
             {duration}
           </p>
         )}
