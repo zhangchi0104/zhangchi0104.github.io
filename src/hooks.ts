@@ -29,12 +29,21 @@ export const useMediaQuery = (query: string) => {
   return match;
 };
 
-export const useAnimationFrame = (callback: (time: number) => void) => {
+export const useAnimationFrame = (
+  callback: (time: number) => void,
+  ticksToWait = 0
+) => {
   // stores the necessary values with useRef
   const requestRef = useRef<number>();
   const previousTimeRef = useRef<number>();
+  const ticksToWaitRef = useRef<number>(ticksToWait);
 
   const animate = (elapsed: number) => {
+    if (ticksToWaitRef.current > 0) {
+      ticksToWaitRef.current--;
+      requestRef.current = requestAnimationFrame(animate);
+      return;
+    }
     if (previousTimeRef.current !== undefined) {
       const deltaTime = elapsed - previousTimeRef.current;
       callback(deltaTime);

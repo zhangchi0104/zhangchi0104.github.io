@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import Settings from "./Settings";
 import { selectScrolled } from "@/store/selectors";
 type ItemSelectCallback = (name: SectionName) => void;
-const animation = "transition-[box-shadow_background-color]";
+const animation = "transition-[box-shadow]";
 const MobileNavBar: React.FC<{ showShadow: boolean }> = ({ showShadow }) => {
   const { t } = useTranslation();
   const shawdow = showShadow
