@@ -15,7 +15,7 @@ interface CanvasMetadata {
 type ShapeChoice = "square" | "circle" | "triangle" | "cross";
 class ParticleAnimation {
   private particles: Particle[];
-  private refresRate = 60;
+  private refreshRate = 60;
   private static readonly SPAWN_PADDING = 10;
   private static readonly D_DEG = 1;
   private static readonly CHOICES: ShapeChoice[] = [
@@ -32,6 +32,7 @@ class ParticleAnimation {
       particles.push(this.randomParticle(meta));
     }
     this.particles = particles;
+    this.refreshRate = meta?.refreshRate ?? 60;
   }
   private randomParticle(meta?: Partial<CanvasMetadata>) {
     let canvasHeight =
@@ -46,11 +47,13 @@ class ParticleAnimation {
     const initX = random(ParticleAnimation.SPAWN_PADDING, maxWidth);
     const initY = random(ParticleAnimation.SPAWN_PADDING, maxHeight);
     const initDeg = random(0, maxDeg);
-
+    const speedFactor = 60 / this.refreshRate;
     const velocityDirection = random(0, maxDeg);
     const radian = (velocityDirection * Math.PI) / 180;
-    const dx = Math.pow(Math.cos(radian), 2) * [-1, 1][random(0, 1)] * 0.5;
-    const dy = Math.pow(Math.sin(radian), 2) * [-1, 1][random(0, 1)] * 0.5;
+    const dx =
+      Math.pow(Math.cos(radian), 2) * [-1, 1][random(0, 1)] * 0.5 * speedFactor;
+    const dy =
+      Math.pow(Math.sin(radian), 2) * [-1, 1][random(0, 1)] * 0.5 * speedFactor;
     const choice =
       ParticleAnimation.CHOICES[
         random(0, ParticleAnimation.CHOICES.length - 1)
@@ -89,10 +92,10 @@ class ParticleAnimation {
     return particle;
   }
   draw(ctx: CanvasRenderingContext2D) {
-    this.particles.forEach((particle) => particle.draw(ctx, this.refresRate));
+    this.particles.forEach((particle) => particle.draw(ctx, this.refreshRate));
   }
   step() {
-    this.particles.forEach((particle) => particle.nextFrame(this.refresRate));
+    this.particles.forEach((particle) => particle.nextFrame(this.refreshRate));
   }
 }
 

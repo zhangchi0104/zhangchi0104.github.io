@@ -44,13 +44,14 @@ const AnimatedCavnas: React.FC = () => {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     if (!animationRef.current) {
       const refreshRate = round(1000 / time, -1);
+      console.log("refreshRate", refreshRate);
       const animation = new ParticleAnimation(25, { refreshRate });
       animationRef.current = animation;
     } else {
       animationRef.current.step();
     }
     animationRef.current?.draw(ctx);
-  });
+  }, 10);
   return (
     fancyModeEnabled && (
       <canvas
