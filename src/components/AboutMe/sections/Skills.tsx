@@ -1,6 +1,5 @@
-import Loading from "@/components/Loading";
 import Section from "@/components/Section";
-import React, { Suspense } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import SkillCard from "./SkillCard";
 const Skills: React.FC = () => {
