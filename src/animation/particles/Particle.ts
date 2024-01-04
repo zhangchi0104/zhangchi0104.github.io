@@ -42,14 +42,12 @@ abstract class Particle
   }
 
   move(refreshRate = 60) {
-    const speed = this.computeSpeedFactor(refreshRate);
-    this.x += this.dx * speed * Particle.DPI;
-    this.y += this.dy * speed * Particle.DPI;
+    this.x += this.dx * Particle.DPI;
+    this.y += this.dy * Particle.DPI;
   }
 
   rotate(refreshRate = 60) {
-    const speed = this.computeSpeedFactor(refreshRate);
-    this.deg += this.ddeg * speed;
+    this.deg += this.ddeg;
   }
 
   draw(ctx: CanvasRenderingContext2D, refreshRate = 60) {
@@ -59,7 +57,7 @@ abstract class Particle
       this.emit("leave");
     }
     let animationSpeedFactor = this.computeSpeedFactor(refreshRate);
-    const totalFramsCount = Particle.SPAWN_FRAMES_COUNT * animationSpeedFactor;
+    const totalFramsCount = Particle.SPAWN_FRAMES_COUNT / animationSpeedFactor;
     const progress = this.age / totalFramsCount;
     const scale = this.age < totalFramsCount ? Particle.CURVE(progress) : 1;
 
