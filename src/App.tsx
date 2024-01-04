@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useLayoutEffect, useRef } from "react";
+import React, { Suspense, useLayoutEffect, useRef } from "react";
 import Home from "./components/Home";
 const AnimatedCavnas = React.lazy(() => import("./components/AnimatedCanvas"));
 import NavBar from "./components/NavBar";

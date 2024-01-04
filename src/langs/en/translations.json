@@ -9,13 +9,7 @@
     "heading": "👋🏻G'Day! I'm Alex.",
     "subheading1": "Master of IT (University of Melbourne)",
     "subheading2": "Web Developer (React)",
-    "mail": {
-      "dialog": {
-        "title": "Mail",
-        "hint": "click to copy",
-        "toast": "COPIED"
-      }
-    }
+    "email": "alex@otakuma.dev"
   },
   "aboutMe": {
     "education": {
@@ -71,6 +65,15 @@
     "projects": {
       "title": "Projects",
       "items": [
+        {
+          "heading": "Seed Guided Topic Modelling",
+          "subheading": "Research (B. Comp Sci. Honours)",
+          "descriptions": [
+            "User-topic based word clustering algorithm",
+            "Ensemble approach with BERT and statistical models",
+            "addresses unseen topics not in the vocabulary"
+          ]
+        },
         {
           "heading": "Iris: Multithreaded IRC",
           "subheading": "Rust (Oct, 2022)",
