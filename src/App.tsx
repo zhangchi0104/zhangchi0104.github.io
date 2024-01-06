@@ -6,13 +6,21 @@ import AboutMe from "./components/AboutMe";
 import { SectionName } from "./store/slices/root";
 import Projects from "./components/Projects";
 import { useDarkMode } from "./hooks";
+import { useTranslation } from "react-i18next";
+
+const useI18nTitle = () => {
+  const { t, i18n } = useTranslation();
+  useLayoutEffect(() => {
+    document.title = t("title");
+  }, [t, i18n.language]);
+};
 
 const App: React.FC = () => {
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutMeRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const darkModeEabled = useDarkMode();
-
+  useI18nTitle();
   useLayoutEffect(() => {
     const root = document.getElementsByTagName("html")[0];
     const style = `${darkModeEabled ? "dark" : "light"}`;

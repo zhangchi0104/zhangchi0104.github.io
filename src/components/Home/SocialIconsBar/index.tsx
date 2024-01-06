@@ -3,7 +3,7 @@ import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import FaIcon from "./FaIcon";
 import NotionIcon from "@/components/icons/NotionIcon";
-import { DocumentIcon } from "@heroicons/react/24/solid";
+import { DocumentTextIcon } from "@heroicons/react/24/solid";
 
 const SocialIconsBar: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const SocialIconsBar: React.FC = () => {
           className="text-gray-500 dark:text-slate-400 hover:text-gray-600 dark:hover:text-slate-300 hover:scale-125 transition ease-in-out duration-200 hover:cursor-pointer"
           href="/static/cv_chi_zhang.pdf"
         >
-          <DocumentIcon className="h-[1.9rem] w-[1.9rem]" />
+          <DocumentTextIcon className="h-[1.9rem] w-[1.9rem]" />
         </a>
       </div>
     </>

@@ -25,7 +25,8 @@
           "university": "千年科技学园",
           "degree": "一年级",
           "duration": "至今",
-          "backgroundUrl": "/static/imgs/millennium.png"
+          "backgroundUrl": "/static/imgs/millennium.png",
+          "backgroundAlt": "千年科技学园（游戏： 蔚蓝档案）校徽"
         }
       ]
     },

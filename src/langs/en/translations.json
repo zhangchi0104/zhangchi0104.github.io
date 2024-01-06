@@ -1,4 +1,5 @@
 {
+  "title": "Hello. I'm Alex",
   "navbar": {
     "home": "Home",
     "aboutMe": "About Me",
@@ -19,13 +20,15 @@
           "university": "University of Melbourne",
           "degree": "Master of IT",
           "duration": "Jul 2023 - Present",
-          "backgroundUrl": "/static/imgs/unimelb.svg"
+          "backgroundUrl": "/static/imgs/unimelb.svg",
+          "backgroundAlt": "University of Melbourne Logo"
         },
         {
           "university": "UNSW Sydney",
           "degree": "B Sci. (Honours) / B Comm (Fintech)",
           "duration": "Feb 2018 - Dec 2022",
-          "backgroundUrl": "/static/imgs/unsw.svg"
+          "backgroundUrl": "/static/imgs/unsw.svg",
+          "backgroundAlt": "UNSW Sydney Logo"
         }
       ]
     },
