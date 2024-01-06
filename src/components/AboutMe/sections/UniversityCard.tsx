@@ -14,6 +14,7 @@ const UniversityCard: React.FC<UniversityCardProps> = ({
   degree,
   backgroundUrl,
   university,
+  backgroundAlt,
   duration,
   className
 }) => {
@@ -25,6 +26,7 @@ const UniversityCard: React.FC<UniversityCardProps> = ({
         <img
           src={backgroundUrl}
           className="absolute py-4 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 max-h-full"
+          alt={backgroundAlt}
         />
       )}
       <CardBody className="text-center relative">

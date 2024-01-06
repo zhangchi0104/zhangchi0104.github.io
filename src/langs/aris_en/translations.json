@@ -25,7 +25,8 @@
           "university": "Millenimum Science School",
           "degree": "Year 1",
           "duration": "Current",
-          "backgroundUrl": "/static/imgs/millennium.png"
+          "backgroundUrl": "/static/imgs/millennium.png",
+          "backgroundLogo": "Millennium Science School (Blue Archive) Logo"
         }
       ]
     },

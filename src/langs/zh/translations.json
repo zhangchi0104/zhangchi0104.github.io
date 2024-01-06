@@ -24,13 +24,15 @@
           "university": "墨尔本大学",
           "degree": "IT硕士",
           "duration": "2023 七月 - 至今",
-          "backgroundUrl": "/static/imgs/unimelb.svg"
+          "backgroundUrl": "/static/imgs/unimelb.svg",
+          "backgroundAlt": "墨尔本大学校徽"
         },
         {
           "university": "新南威尔士大学",
           "degree": "计算机科学学士(荣誉学位) / 商科学士 (金融科技)",
           "duration": "2018 二月 - 2022 十二月",
-          "backgroundUrl": "/static/imgs/unsw.svg"
+          "backgroundUrl": "/static/imgs/unsw.svg",
+          "backgroundAlt": "新南威尔士大学校徽"
         }
       ]
     },

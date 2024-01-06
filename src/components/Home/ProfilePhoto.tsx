@@ -5,6 +5,7 @@ const ProfilePhoto: React.FC = () => (
     <img
       className="w-80 h-80 bg-gray-300 object-cover"
       src="/static/imgs/profile-min.png"
+      alt="profile photo (arisu)"
     />
   </div>
 );
