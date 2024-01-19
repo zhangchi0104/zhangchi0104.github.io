@@ -27,7 +27,7 @@ const SocialIconsBar: React.FC = () => {
         </a>
         <a
           className="text-gray-500 dark:text-slate-400 hover:text-gray-600 dark:hover:text-slate-300 hover:scale-125 transition ease-in-out duration-200 hover:cursor-pointer"
-          href="/static/cv_chi_zhang.pdf"
+          href="/static/CV_Chi_ZHANG_2025_Grad.pdf"
         >
           <DocumentTextIcon className="h-[1.9rem] w-[1.9rem]" />
         </a>
