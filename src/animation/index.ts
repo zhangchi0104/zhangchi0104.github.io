@@ -95,7 +95,7 @@ class ParticleAnimation {
     this.particles.forEach((particle) => particle.draw(ctx, this.refreshRate));
   }
   step() {
-    this.particles.forEach((particle) => particle.nextFrame(this.refreshRate));
+    this.particles.forEach((particle) => particle.nextFrame());
   }
 }
 
