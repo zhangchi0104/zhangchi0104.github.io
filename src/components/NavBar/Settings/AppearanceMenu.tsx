@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@/hooks";
 import { selectAppearance } from "@/store/selectors";
 
-import React, { useTransition } from "react";
+import React from "react";
 import {
   SunIcon,
   MoonIcon,

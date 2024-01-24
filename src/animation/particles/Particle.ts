@@ -41,12 +41,12 @@ abstract class Particle
     this.dpi = window.devicePixelRatio || 1;
   }
 
-  move(refreshRate = 60) {
+  move() {
     this.x += this.dx * Particle.DPI;
     this.y += this.dy * Particle.DPI;
   }
 
-  rotate(refreshRate = 60) {
+  rotate() {
     this.deg += this.ddeg;
   }
 
@@ -98,10 +98,10 @@ abstract class Particle
     }
     return true;
   }
-  public nextFrame(refreshRate = 60) {
+  public nextFrame() {
     // this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-    this.move(refreshRate);
-    this.rotate(refreshRate);
+    this.move();
+    this.rotate();
   }
 }
 
