@@ -5,10 +5,11 @@ module.exports = {
     extend: {
       animation: {
         "fade-in": "fade-in 0.3s cubic-bezier(0.4, 0, 1, 1)",
-        "fade-bounce-in": "fade-bounce-in 0.3s cubic-bezier(0.4, 0, 1, 1)",
+        "fade-bounce-in": "fade-bounce-in 0.2s cubic-bezier(0.4, 0, 1, 1)",
         "bounce-emphasis": "bounce-emphasis 0.3s cubic-bezier(0.4, 0, 1, 1)",
         "bounce-in-x": "bounce-in-x 1.5s ease-in-out 0.3s",
-        "spin-bounce": "spin-bounce 0.3s linear"
+        "spin-bounce": "spin-bounce 0.3s linear",
+        "fade-out": "fade-out 0.3s linear 0.3s"
       },
       keyframes: {
         "fade-in": {
@@ -71,6 +72,14 @@ module.exports = {
           },
           "100%": {
             transform: "translateY(0) rotate(180deg)"
+          }
+        },
+        "fade-out": {
+          "0%": {
+            opacity: "1"
+          },
+          "100%": {
+            opacity: "0"
           }
         }
       }

@@ -4,13 +4,20 @@
     "home": "Home",
     "aboutMe": "About Me",
     "projects": "Projects",
-    "name": "Alex Zhang"
+    "name": "Alex Zhang",
+    "settings": {
+      "darkMode": "Dark",
+      "lightMode": "Light",
+      "fancyMode": "Fancy Mode",
+      "followSystem": "System"
+    }
   },
   "home": {
     "heading": "👋🏻G'Day! I'm Alex.",
     "subheading1": "Master of IT (University of Melbourne)",
     "subheading2": "Web Developer (React)",
-    "email": "alex@otakuma.dev"
+    "email": "alex@otakuma.dev",
+    "copied": "Copied!"
   },
   "aboutMe": {
     "education": {
