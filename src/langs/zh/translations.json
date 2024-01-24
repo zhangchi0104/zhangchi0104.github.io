@@ -2,7 +2,13 @@
   "navbar": {
     "home": "首页",
     "aboutMe": "关于我",
-    "projects": "项目经历"
+    "projects": "项目经历",
+    "settings": {
+      "darkMode": "深色模式",
+      "lightMode": "浅色模式",
+      "followSystem": "跟随系统",
+      "fancyMode": "背景动画"
+    }
   },
   "home": {
     "heading": "嗨👋🏻! 我是 Alex",
@@ -14,7 +20,8 @@
         "hint": "单击复制",
         "toast": "已复制"
       }
-    }
+    },
+    "copied": "已复制!"
   },
   "aboutMe": {
     "education": {

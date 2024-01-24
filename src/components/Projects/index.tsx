@@ -1,10 +1,9 @@
-import React, { Suspense } from "react";
+import React from "react";
 
 import IntersectionDetector from "../IntersectionObserver";
 import { useAppDispatch } from "@/hooks";
 import { setActiveSectionName } from "@/store/actions";
 import { useTranslation } from "react-i18next";
-import Loading from "../Loading";
 const ProjectCard = React.lazy(
   () => import(/* webpackChunkName: "project-card" */ "./ProjectCard")
 );

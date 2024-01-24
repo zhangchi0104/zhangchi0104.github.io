@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState } from "react";
 import { Card } from "../Card";
 import Collapsable from "../Collapsable";
-import { init } from "i18next";
 
 interface AboutMeCardSelfProps {
   heading: string | JSX.Element;

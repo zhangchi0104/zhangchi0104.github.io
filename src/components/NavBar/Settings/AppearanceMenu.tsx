@@ -8,10 +8,11 @@ import {
   ComputerDesktopIcon
 } from "@heroicons/react/24/outline";
 import { setAppearance } from "@/store/actions";
+import { useTranslation } from "react-i18next";
 const AppearanceMenu: React.FC = () => {
   const appearance = useAppSelector(selectAppearance);
   const dispatch = useAppDispatch();
-
+  const { t } = useTranslation();
   const onListItemClick = (newAppearance: "light" | "dark" | "system") => {
     dispatch(setAppearance(newAppearance));
   };
@@ -28,7 +29,7 @@ const AppearanceMenu: React.FC = () => {
         <span className="mr-2 text-sm">
           <SunIcon className="h-5 w-5" />
         </span>
-        Light
+        {t("navbar.settings.lightMode")}
       </li>
       <li
         className={`${
@@ -41,7 +42,7 @@ const AppearanceMenu: React.FC = () => {
         <span className="mr-2 text-sm">
           <MoonIcon className="h-5 w-5" />
         </span>
-        Dark
+        {t("navbar.settings.darkMode")}
       </li>
       <li
         className={`${
@@ -54,7 +55,7 @@ const AppearanceMenu: React.FC = () => {
         <span className="mr-2 text-sm">
           <ComputerDesktopIcon className="h-5 w-5" />
         </span>
-        System
+        {t("navbar.settings.followSystem")}
       </li>
     </ul>
   );
