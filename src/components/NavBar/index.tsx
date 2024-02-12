@@ -64,12 +64,12 @@ const DesktopNavBar: React.FC<{
   );
 };
 const NavBar: React.FC<{ onClick: ItemSelectCallback }> = ({ onClick }) => {
-  const match = useMediaQuery("(min-width: 640px)");
+  const isMobile = useMediaQuery("(min-width: 640px)");
   const scrolled = useAppSelector(selectScrolled);
 
   return (
     <div>
-      {!match ? (
+      {!isMobile ? (
         <MobileNavBar showShadow={scrolled} />
       ) : (
         <DesktopNavBar showShadow={scrolled} onClick={onClick} />
