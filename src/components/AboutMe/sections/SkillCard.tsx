@@ -40,7 +40,7 @@ const SkillBar: React.FC<SkillBarProps> = ({ name, level, className }) => {
     <div className={className}>
       <div className="flex justify-between text-sm font-bold text-gray-700 dark:text-slate-300 tracking-wide mx-1">
         <span>{name}</span>
-        <span className={`text-gray-600 dark:text-slate-400`}>{capitalize(level)}</span>
+        <span className={"text-gray-600 dark:text-slate-400"}>{capitalize(level)}</span>
       </div>
       <div className={`rounded-xl bg-gray-200 dark:bg-slate-400 w-full h-2 mt-2 relative overflow-hidden ${skillSeparatorLeft} ${skillSeparatorRight}`}>
         <div
