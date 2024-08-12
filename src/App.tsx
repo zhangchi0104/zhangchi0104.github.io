@@ -58,7 +58,7 @@ const App: React.FC = () => {
       <Suspense fallback={<div className="hidden"></div>}>
         <AnimatedCavnas />
       </Suspense>
-      <div className="max-w-screen-lg mx-auto">
+      <div className="max-w-screen-lg lg:mx-auto mx-8">
         <Home ref={homeRef} />
         <AboutMe ref={aboutMeRef} />
         <Projects ref={projectsRef}></Projects>

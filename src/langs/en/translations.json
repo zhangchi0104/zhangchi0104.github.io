@@ -46,13 +46,12 @@
           "heading": "Frontend",
           "subheading": "Familiar with HTML, CSS, JS; uses React, Tailwind",
           "skillset": {
-            "HTML": 4,
-            "CSS": 4,
-            "JavaScript": 4,
-            "TypeScript": 3,
-            "React": 3,
-            "Vue2": 2,
-            "Redux": 3
+            "HTML": "proficient",
+            "CSS": "proficient",
+            "JavaScript": "proficient",
+            "TypeScript": "proficient",
+            "React": "proficient",
+            "Redux": "intermediate"
           }
         }
       ]
@@ -68,6 +67,15 @@
             "Created detailed visualisation for job statistics with echarts",
             "Developed an API gateway facilatating communication between the web interface and backend service",
             "Refactoring and optimising existing code to user interface performance"
+          ]
+        },
+        {
+          "title": "Software Engineer Intern",
+          "company": "Everyoung AI",
+          "descriptions": [
+            "Developped a mobile app with Reactive Native, with capability of real-time AI chatting with voice and text",
+            "Renovated the company website, enhancing user experience and SEO",
+            "Involved in developping processing pipeline involving NLP and computer vision"
           ]
         }
       ]

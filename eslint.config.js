@@ -1,10 +1,11 @@
-const react = require("eslint-plugin-react");
-const tsParser = require("@typescript-eslint/parser");
-const globals = require("globals");
-const ts = require("@typescript-eslint/eslint-plugin");
-const importRules = require("eslint-plugin-import");
-const unusedImports = require("eslint-plugin-unused-imports");
-module.exports = [
+import react from "eslint-plugin-react";
+import tsParser from "@typescript-eslint/parser";
+import globals from "globals";
+import ts from "@typescript-eslint/eslint-plugin";
+import importRules from "eslint-plugin-import";
+import unusedImports from "eslint-plugin-unused-imports";
+
+export default [
   {
     plugins: {
       react,

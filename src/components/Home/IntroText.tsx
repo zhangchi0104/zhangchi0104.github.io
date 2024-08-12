@@ -32,7 +32,7 @@ const IntroText: React.FC = () => {
         </h2>
         <p className="text-md md:text-xl  mt-1">{t("home.subheading1")}</p>
         <p className="text-md md:text-xl">{t("home.subheading2")}</p>
-        <p className="text-xs md:text-sm mt-2 flex flex-col md:flex-row items-center">
+        <div  className="text-xs md:text-sm mt-2 flex flex-col md:flex-row items-center">
           <div onClick={copyEmail} className="">
             <span className="mr-1">
               <EnvelopeIcon className="h-6 w-6 inline" />
@@ -45,7 +45,7 @@ const IntroText: React.FC = () => {
           >
             {t("home.copied")}
           </p>
-        </p>
+        </div>
       </div>
     </>
   );
