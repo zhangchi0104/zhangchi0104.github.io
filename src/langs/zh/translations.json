@@ -50,13 +50,12 @@
           "heading": "前端",
           "subheading": "熟悉 HTML、CSS、JS；使用 React、Tailwind",
           "skillset": {
-            "HTML": 4,
-            "CSS": 4,
-            "JavaScript": 4,
-            "TypeScript": 3,
-            "React": 3,
-            "Vue2": 2,
-            "Redux": 3
+            "HTML": "proficient",
+            "CSS": "proficient",
+            "JavaScript": "proficient",
+            "TypeScript": "proficient",
+            "React": "proficient",
+            "Redux": "intermediate"
           }
         }
       ]
@@ -72,6 +71,15 @@
             "使用 echarts 创建了详细的作业统计可视化",
             "开发了一个 API 网关，促进了 Web 界面与后端服务之间的通信",
             "重构和优化现有代码以提高用户界面性能"
+          ]
+        },
+        {
+          "title": "软件工程师实习生",
+          "company": "Everyoung AI",
+          "descriptions": [
+            "使用Reactive Native开发了一个具有实时AI语音和文本聊天功能的移动应用",
+            "改造了公司网站，增强了用户体验和SEO",
+            "参与优化公司大语言模型API调用优化，提升API响应速度"
           ]
         }
       ]
